@@ -1,0 +1,48 @@
+.header {
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+  width: auto;
+  display: flex;
+  background: rgb(255, 255, 255);
+  font-size: 2vw;
+  font-family: "Roboto", sans-serif;
+  color: rgba(0, 0, 0, 0.781);
+  background: linear-gradient(
+    90deg,
+    rgb(164, 244, 255) 0%,
+    rgb(134, 132, 255) 35%,
+    rgb(2, 19, 255) 100%
+  );
+  justify-content: space-between;
+  /* padding-right: 5vw; */
+}
+
+.image {
+  /* padding-left: 5vw; */
+  margin-bottom: 1vw;
+  width: 27vw;
+  height: 12vw;
+}
+
+.headerNav {
+  justify-items: self-end;
+  display: flex;
+  flex-basis: 1;
+  align-items: end;
+  list-style: none;
+}
+
+.headerNav > li {
+  margin: 1vw;
+  margin-bottom: 1vw;
+  margin-right: 2vw;
+  border: transparent solid 7px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.headerNav > li:hover {
+  transition: 100ms ease-in-out;
+  color: rgba(0, 0, 0, 0.363);
+  opacity: 0.8;
+}

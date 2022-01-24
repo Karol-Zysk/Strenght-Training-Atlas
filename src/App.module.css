@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+.App {
+  text-align: center;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto;
+  /* overflow: hidden; */
+  font-size: 30px;
+  font-family: "Roboto", sans-serif;
+  width: 100vw;
+  background-color: rgba(0, 255, 255, 0.178);
+}

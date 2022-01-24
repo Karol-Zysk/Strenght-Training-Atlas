@@ -1,0 +1,49 @@
+.contacts {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  max-width: 20vw;
+  font-size: 2.45vh;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  margin: 1vw;
+  padding-bottom: 2vh;
+  border: rgb(253, 255, 254) 5px solid;
+  background-color: cyan;
+}
+
+.trainers {
+  margin: 1vw;
+  padding-bottom: 2vh;
+  border-bottom: blue 5px solid;
+}
+
+.specUL > li {
+  list-style: none;
+  margin: 2vh;
+}
+
+.contacts > h3 {
+  margin: 1vw;
+  text-align: center;
+}
+
+.trainers > p {
+  margin: 1vh;
+}
+
+.trainers > img {
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+}
+
+.emailButton {
+  padding: 2vh;
+  border: none;
+  box-shadow: 1px 1px 1px 2px rgba(0, 0, 0, 0.445);
+  margin: 1vh;
+}
+
+.hoverTab {
+  display: none;
+}
