@@ -8,54 +8,70 @@ const trainers = [
   {
     photo: photo,
     name: "Karol Zyśk",
-    specialization: [<li>Strenght Training</li>, <li>Mobility Training</li>],
+    specialization: ["Strenght Training", "Mobility Training"],
     motto:
       "progress is not the result of hard training but the result of regularly repeated training",
+    id: true,
   },
   {
     photo: photo2,
     name: "Michael Scott",
-    specialization: [
-      <li>Strenght Training</li>,
-      <li>Motivation</li>,
-      <li>Regeneration Expert</li>,
-    ],
+    specialization: ["Strenght Training", "Motivation", "Regeneration Expert"],
     motto: "You should never settle for who you are",
+    id: true,
   },
   {
     photo: photo3,
     name: "Dwight Shrutt",
-    specialization: [
-      <li>Strenght Training</li>,
-      <li>Martial Arts</li>,
-      <li>Mental Training</li>,
-    ],
+    specialization: ["Strenght Training", "Martial Arts", "Mental Training"],
     motto:
       "Whenever I'm about to do something, I think 'Would an idiot do that?' And if they would, I do not do that thing.",
+    id: true,
   },
 ];
 
-export const Contacts = () => {
-  console.log(photo);
-  console.log(trainers);
+export const Contacts = ({ clickValue }) => {
+  const [openedCardId, setOpenedCardId] = React.useState(false);
+
+  console.log(clickValue);
 
   return (
-    <div className={style.contacts}>
+    <div
+      className={style.contacts}
+      className={clickValue === true ? style.showContacts : style.hideContacts}
+    >
       <h3>Contacts</h3>
       {trainers.map((trainer) => (
-        <div className={style.trainers} key={trainer.name}>
+        <div className={style.trainers}>
           <img src={trainer.photo} alt="TrainerPhoto" />
           <p>
             <b>Trainer:</b> {trainer.name}
           </p>
-          <div className={style.hoverTab}>
+
+          <div
+            className={
+              trainer.id === openedCardId ? style.openedNot : style.opened
+            }
+          >
             <b>Specialization:</b>
-            <ul className={style.specUL}>{trainer.specialization}</ul>
+            <ul className={style.specUL}>
+              {trainer.specialization.map((spec, index) => (
+                <li key={index}>{spec}</li>
+              ))}
+            </ul>
             <p>
               <b>Motto:</b> {trainer.motto}
             </p>
-            <button className={style.emailButton}>write an email</button>
           </div>
+
+          <button
+            onClick={() => {
+              setOpenedCardId((prevState) => (trainer.id = !prevState));
+            }}
+            className={style.emailButton}
+          >
+            More Info
+          </button>
         </div>
       ))}
     </div>

@@ -1,20 +1,27 @@
 .contacts {
-  grid-column: 1 / 2;
-  grid-row: 2 / 3;
-  max-width: 20vw;
+  /* grid-column: 1 / 2; */
+  /* grid-row: 2 / 3; */
+
   font-size: 2.45vh;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
-  margin: 1vw;
-  padding-bottom: 2vh;
-  border: rgb(253, 255, 254) 5px solid;
   background-color: cyan;
+}
+
+.showContacts {
+  animation: showContacts 2s ease 200ms 1 forwards fill-mode running;
+}
+.hideContacts {
+  animation: showContacts 2s ease 200ms 1 forwards running rewerse;
 }
 
 .trainers {
   margin: 1vw;
   padding-bottom: 2vh;
   border-bottom: blue 5px solid;
+  min-height: 20px;
+  transition: 300ms ease;
+  /* visibility: hidden; */
 }
 
 .specUL > li {
@@ -32,18 +39,37 @@
 }
 
 .trainers > img {
-  height: 60px;
-  width: 60px;
+  height: 12.5vh;
+  width: 12.5vh;
   border-radius: 100%;
+  object-fit: cover;
 }
 
 .emailButton {
   padding: 2vh;
   border: none;
-  box-shadow: 1px 1px 1px 2px rgba(0, 0, 0, 0.445);
+  box-shadow: 1px 1px 1px 2px rgba(0, 0, 0, 0.822);
   margin: 1vh;
+  border-radius: 2vh;
+  font-weight: 700;
+  background-color: rgba(255, 255, 255, 0.959);
 }
 
-.hoverTab {
+.opened {
+  display: block;
+}
+
+.openedNot {
   display: none;
+}
+
+@keyframes showContacts {
+  from {
+    width: 0vw;
+    opacity: 0;
+  }
+  to {
+    width: 20vw;
+    opacity: 1;
+  }
 }
