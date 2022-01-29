@@ -14,9 +14,6 @@
   font-family: "Roboto", sans-serif;
   width: 100vw;
   background-color: rgba(255, 255, 255, 0.178);
-
-  grid-column-gap: 22px;
-  grid-row-gap: 22px;
 }
 
 .btn {

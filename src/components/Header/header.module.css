@@ -4,7 +4,7 @@
   width: auto;
   display: flex;
   background: rgb(255, 255, 255);
-  font-size: 2vw;
+  font-size: 1.5vw;
   font-family: "Roboto", sans-serif;
   color: rgba(0, 0, 0, 0.781);
   background: linear-gradient(
@@ -20,8 +20,8 @@
 .image {
   /* padding-left: 5vw; */
   margin-bottom: 1vw;
-  width: 27vw;
-  height: 12vw;
+  width: 20vw;
+  height: 8vw;
 }
 
 .headerNav {

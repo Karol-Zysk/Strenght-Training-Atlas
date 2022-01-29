@@ -1,4 +1,5 @@
 import React from "react";
+import { useContext } from "react";
 import "./App.module.css";
 import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
@@ -7,18 +8,24 @@ import Footer from "./components/Footer/Footer";
 import style from "./App.module.css";
 
 function App(props) {
-  const [showContacts, setShowContacts] = React.useState(false);
+  const [showContacts, setShowContacts] = React.useState(null);
 
   const handleSetShowContacts = () => {
     setShowContacts(!showContacts);
-    console.log("dupa");
   };
 
   return (
     <div className={style.App}>
       <Header showTabFN={handleSetShowContacts} />
       <div className={style.mainContent}>
-        <Contacts clickValue={showContacts} />
+        <div
+          className={style.contacts}
+
+          /*className={clickValue === true ? style.showContacts : style.hideContacts}*/
+        >
+          <Contacts clickValue={showContacts} />
+        </div>
+
         <Main />
       </div>
 

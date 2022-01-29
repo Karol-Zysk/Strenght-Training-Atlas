@@ -1,18 +1,30 @@
 .contacts {
   /* grid-column: 1 / 2; */
   /* grid-row: 2 / 3; */
-
+  width: 0vw;
+  opacity: 1;
+}
+.showContacts {
+  opacity: 0;
+  width: 0vw;
+  animation: 2s ease 200ms 1 forwards fill-mode;
+  animation-name: visibleContacts;
   font-size: 2.45vh;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   background-color: cyan;
 }
 
-.showContacts {
-  animation: showContacts 2s ease 200ms 1 forwards fill-mode running;
-}
 .hideContacts {
-  animation: showContacts 2s ease 200ms 1 forwards running rewerse;
+  opacity: 1;
+  width: 20vw;
+  animation: 2s ease 200ms 1 forwards fill-mode running;
+  animation-name: invisibleContacts;
+  transition: 2s ease;
+  font-size: 2.45vw;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  background-color: cyan;
 }
 
 .trainers {
@@ -38,7 +50,7 @@
   margin: 1vh;
 }
 
-.trainers > img {
+.trainerAvatar {
   height: 12.5vh;
   width: 12.5vh;
   border-radius: 100%;
@@ -63,13 +75,35 @@
   display: none;
 }
 
-@keyframes showContacts {
+.questionary {
+  display: flex;
+  align-items: center;
+  border: 3px solid rgba(0, 0, 0, 0.452);
+  border-radius: 25px;
+  margin: 1vh;
+  box-shadow: 3px 1px 3px rgba(255, 255, 255, 0.753);
+}
+
+@keyframes visibleContacts {
   from {
+    font-size: 2vh;
     width: 0vw;
     opacity: 0;
   }
   to {
+    font-size: 2.45vh;
     width: 20vw;
     opacity: 1;
+  }
+}
+
+@keyframes invisibleContacts {
+  from {
+    width: 20vw;
+    opacity: 1;
+  }
+  to {
+    width: 0vw;
+    opacity: 0;
   }
 }
