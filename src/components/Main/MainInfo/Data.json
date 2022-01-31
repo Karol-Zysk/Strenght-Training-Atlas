@@ -1,0 +1,57 @@
+
+ { "Info":[
+    {"TrainingPrograms": {
+     "fbw": {
+        "aboutMethod": "elo elo",
+        "priorities": "Strenght",
+        "forWho": "good as first pick",
+        "sample plan": "trening tratata"
+     },
+     "pushPull": {
+         "aboutMethod": "elo elo",
+         "priorities": "Strenght",
+         "forWho": "good as first pick",
+         "sample plan": "trening tratata"
+     },
+     "split":  {
+         "aboutMethod": "elo elo",
+         "priorities": "Strenght",
+         "forWho": "good as first pick",
+         "sample plan": "trening tratata"
+     }
+   
+      },
+      
+   "MuscleGroups":{
+      "Chest": {
+         "Photo" : "photo",
+         "BestExercises": ["bench press", "incline bench press", "butterflys"]
+      },
+      "Biceps": {
+         "Photo" : "photo",
+         "BestExercises": ["bench press", "incline bench press", "butterflys"]
+      },
+      "Triceps": {
+         "Photo" : "photo",
+         "BestExercises": ["bench press", "incline bench press", "butterflys"]
+      },
+      "Back": {
+         "Photo" : "photo",
+         "BestExercises": ["bench press", "incline bench press", "butterflys"]
+      },
+      "Quadriceps": {
+         "Photo" : "photo",
+         "BestExercises": ["bench press", "incline bench press", "butterflys"]
+      },
+      "Hamstrings": {
+         "Photo" : "photo",
+         "BestExercises": ["bench press", "incline bench press", "butterflys"]
+      },
+      "Calves": {
+         "Photo" : "photo",
+         "BestExercises": ["bench press", "incline bench press", "butterflys"]
+      }
+   }
+}
+ ]
+ }

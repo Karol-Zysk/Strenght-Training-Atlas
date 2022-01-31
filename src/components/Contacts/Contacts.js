@@ -1,4 +1,4 @@
-import { useContext } from "react";
+
 import React from "react";
 import style from "./contacts.module.css";
 import photo from "./Trainer1.jpg";
@@ -49,7 +49,7 @@ export const Contacts = ({ clickValue }) => {
           : "blabla"
       }
     >
-      <h3>Contacts</h3>
+      <h3 className={style.contactsH3}>Contacts</h3>
       {cards.map((trainer) => (
         <div className={style.trainers}>
           <p>
@@ -61,7 +61,11 @@ export const Contacts = ({ clickValue }) => {
               trainer.expanded === true ? style.opened : style.openedNot
             }
           >
-            <img src={trainer.photo} alt="TrainerPhoto" className={style.trainerAvatar} />
+            <img
+              src={trainer.photo}
+              alt="TrainerPhoto"
+              className={style.trainerAvatar}
+            />
             <b>Specialization:</b>
             <ul className={style.specUL}>
               {trainer.specialization.map((spec, index) => (
@@ -81,9 +85,8 @@ export const Contacts = ({ clickValue }) => {
                   margin: "5px",
                   padding: "10px",
                 }}
-              >
-                Ask a question....
-              </textarea>
+                defaultValue={"Ask a question...."}
+              ></textarea>
               <button className={style.emailButton} type="submit">
                 send
               </button>

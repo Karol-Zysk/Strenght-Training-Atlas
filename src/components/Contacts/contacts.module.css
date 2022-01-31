@@ -1,9 +1,12 @@
 .contacts {
-  /* grid-column: 1 / 2; */
-  /* grid-row: 2 / 3; */
   width: 0vw;
-  opacity: 1;
+  opacity: 0;
 }
+
+.contactsH3 {
+  padding: 3vh 0 3vh;
+}
+
 .showContacts {
   opacity: 0;
   width: 0vw;
@@ -17,11 +20,11 @@
 
 .hideContacts {
   opacity: 1;
-  width: 20vw;
-  animation: 2s ease 200ms 1 forwards fill-mode running;
+  width: 19vw;
+  animation: 1s ease 200ms 1 forwards fill-mode running;
   animation-name: invisibleContacts;
   transition: 2s ease;
-  font-size: 2.45vw;
+  font-size: 2.45vh;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   background-color: cyan;
@@ -60,15 +63,22 @@
 .emailButton {
   padding: 2vh;
   border: none;
-  box-shadow: 1px 1px 1px 2px rgba(0, 0, 0, 0.822);
+  box-shadow: 1px 1px 1px 2px rgba(34, 34, 34, 0.822);
   margin: 1vh;
   border-radius: 2vh;
   font-weight: 700;
   background-color: rgba(255, 255, 255, 0.959);
+  transition: 200ms ease;
+}
+
+.emailButton:hover {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 1px 1px 1px 2px rgb(0, 0, 0);
 }
 
 .opened {
   display: block;
+  animation: showMoreInfo 500ms linear forwards;
 }
 
 .openedNot {
@@ -85,13 +95,15 @@
 }
 
 @keyframes visibleContacts {
-  from {
-    font-size: 2vh;
+  0% {
     width: 0vw;
     opacity: 0;
   }
-  to {
-    font-size: 2.45vh;
+  20% {
+    width: 20vw;
+    opacity: 0;
+  }
+  100% {
     width: 20vw;
     opacity: 1;
   }
@@ -105,5 +117,16 @@
   to {
     width: 0vw;
     opacity: 0;
+  }
+}
+
+@keyframes showMoreInfo {
+  from {
+    opacity: 0;
+    height: 15vh;
+  }
+  to {
+    opacity: 1;
+    height: 100%;
   }
 }
