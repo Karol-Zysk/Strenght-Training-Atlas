@@ -4,5 +4,7 @@
   /* width: 100vw; */
   min-height: 60vh;
   background-color: blue;
+  display: flex;
   flex: 1;
+  flex-direction: column;
 }
