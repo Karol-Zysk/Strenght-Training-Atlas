@@ -29,6 +29,8 @@ const TrainingInfo = (props) => {
       <nav style={{ width: "100%" }}>
         <h2>Body Parts</h2>
       </nav>
+
+      
       <div className={style.tileContainer}>
         {data?.slice(0, 16)?.map((bodyPart) => {
           const tilecheck = () => {

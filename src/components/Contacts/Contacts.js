@@ -1,4 +1,3 @@
-
 import React from "react";
 import style from "./contacts.module.css";
 import photo from "./Trainer1.jpg";
@@ -38,21 +37,11 @@ export const Contacts = ({ clickValue }) => {
   const [cards, setCards] = React.useState(cardData);
 
   return (
-    <div
-      className={
-        clickValue == null
-          ? style.contacts
-          : clickValue === true
-          ? style.showContacts
-          : clickValue === false
-          ? style.hideContacts
-          : "blabla"
-      }
-    >
-      <h3 className={style.contactsH3}>Contacts</h3>
+    <nav className={clickValue ? style.nav_menu_active : style.nav_menu}>
+      <h2 className={style.contactsH2}>Contacts</h2>
       {cards.map((trainer) => (
         <div className={style.trainers}>
-          <p>
+          <p className={style.paragraph}>
             <b>Trainer:</b> {trainer.name}
           </p>
 
@@ -61,40 +50,39 @@ export const Contacts = ({ clickValue }) => {
               trainer.expanded === true ? style.opened : style.openedNot
             }
           >
-            <img
-              src={trainer.photo}
-              alt="TrainerPhoto"
-              className={style.trainerAvatar}
-            />
-            <b>Specialization:</b>
-            <ul className={style.specUL}>
-              {trainer.specialization.map((spec, index) => (
-                <li key={index}>{spec}</li>
-              ))}
-            </ul>
+            <div className={style.trainer_flex_div}>
+              <div>
+                <b>Specialization:</b>
+                <ul className={style.specUL}>
+                  {trainer.specialization.map((spec, index) => (
+                    <li key={index}>{spec}</li>
+                  ))}
+                </ul>
+              </div>
+
+              <img
+                src={trainer.photo}
+                alt="TrainerPhoto"
+                className={style.trainerAvatar}
+              />
+            </div>
+
             <p>
               <b>Motto:</b> {trainer.motto}
             </p>
             <div className={style.questionary}>
               <textarea
-                style={{
-                  height: "15vh",
-                  width: "10vw",
-                  borderRadius: "20px",
-                  border: "none",
-                  margin: "5px",
-                  padding: "10px",
-                }}
+                className={style.mail_area}
                 defaultValue={"Ask a question...."}
               ></textarea>
-              <button className={style.emailButton} type="submit">
+              <button className={style.btn} type="submit">
                 send
               </button>
             </div>
           </div>
 
           <button
-            className={style.emailButton}
+            className={style.btn}
             onClick={() => {
               setCards((current) => {
                 const currentCopy = [...current];
@@ -118,7 +106,7 @@ export const Contacts = ({ clickValue }) => {
           </button>
         </div>
       ))}
-    </div>
+    </nav>
   );
 };
 

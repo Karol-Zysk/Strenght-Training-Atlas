@@ -1,20 +1,29 @@
 import React from "react";
 import style from "./header.module.css";
-import image from "./STAP.png";
+import logo from "./logo.PNG";
 
 export const Header = ({ showTabFN, showContacts, setShowContacts }) => {
   return (
-    <div className={style.header}>
-      <h1 className={style.headerH1}>Strenght Training Atlas</h1>
-      <div className={style.headerNav}>
-        <li>Training basics</li>
-        <li onClick={() => showTabFN(showContacts, setShowContacts)}>
-          Ask our trainer
-        </li>
-        <li>Exercises</li>
-        <li>Articles</li>
-      </div>
-    </div>
+    <>
+      <header className={style.header}>
+        <img className={style.logo} src={logo} alt="logo"></img>
+        <nav>
+          <ul className={style.nav_links}>
+            <li className={style.nav_links_li}>Basics</li>
+            <li className={style.nav_links_li}>Exercises</li>
+            <li className={style.nav_links_li}>Articles</li>
+            <li class={style.nav_links_li}>
+              <button
+                className={style.btn}
+                onClick={() => showTabFN(showContacts, setShowContacts)}
+              >
+                Ask Trainer
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    </>
   );
 };
 
