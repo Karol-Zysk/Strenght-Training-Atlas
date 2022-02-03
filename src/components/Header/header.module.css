@@ -1,10 +1,11 @@
 .header {
+  padding: 2vh;
   grid-column: 1 / -1;
   grid-row: 1 / 2;
-  width: auto;
   display: flex;
+  flex-direction: column;
   background: rgb(255, 255, 255);
-  font-size: 1.5vw;
+  font-size: clamp(1.3rem, 2.5vw, 2rem);
   font-family: "Roboto", sans-serif;
   color: rgba(0, 0, 0, 0.781);
   background: linear-gradient(
@@ -14,21 +15,18 @@
     rgb(2, 19, 255) 100%
   );
   justify-content: space-between;
-  /* padding-right: 5vw; */
 }
 
-.image {
-  /* padding-left: 5vw; */
-  margin-bottom: 1vw;
-  width: 20vw;
-  height: 8vw;
+.headerH1 {
+  align-self: flex-start;
+  padding: 3vh;
 }
 
 .headerNav {
   justify-items: self-end;
   display: flex;
   flex-basis: 1;
-  align-items: end;
+  align-self: flex-end;
   list-style: none;
 }
 

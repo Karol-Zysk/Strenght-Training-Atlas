@@ -28,3 +28,6 @@
   grid-column: 1/ -1;
   grid-row: 2 / 3;
 }
+.contacts {
+  background-color: rgba(128, 128, 128, 0.493);
+}

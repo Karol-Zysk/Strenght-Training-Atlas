@@ -5,7 +5,7 @@ import image from "./STAP.png";
 export const Header = ({ showTabFN, showContacts, setShowContacts }) => {
   return (
     <div className={style.header}>
-      <img className={style.image} src={image} alt="logo" />
+      <h1 className={style.headerH1}>Strenght Training Atlas</h1>
       <div className={style.headerNav}>
         <li>Training basics</li>
         <li onClick={() => showTabFN(showContacts, setShowContacts)}>

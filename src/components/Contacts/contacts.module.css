@@ -1,6 +1,7 @@
 .contacts {
   width: 0vw;
   opacity: 0;
+  background-color: rgb(241, 237, 237);
 }
 
 .contactsH3 {
@@ -15,7 +16,7 @@
   font-size: 2.45vh;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
-  background-color: cyan;
+  background-color: rgba(0, 255, 255, 0.513);
 }
 
 .hideContacts {
@@ -24,10 +25,9 @@
   animation: 1s ease 200ms 1 forwards fill-mode running;
   animation-name: invisibleContacts;
   transition: 2s ease;
-  font-size: 2.45vh;
+  font-size: clamp(1rem, 1vw, 2rem);
   font-family: "Roboto", sans-serif;
   font-weight: 300;
-  background-color: cyan;
 }
 
 .trainers {
