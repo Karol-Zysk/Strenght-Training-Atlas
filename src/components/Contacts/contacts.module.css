@@ -6,7 +6,7 @@
   z-index: 99;
   background-color: rgba(9, 9, 9, 0.76);
   width: 25vw;
-  min-height: 200vh;
+  margin-top: 20vh;
   display: flex;
 
   flex-direction: column;
@@ -23,7 +23,9 @@
   z-index: 99;
   background-color: rgba(9, 9, 9, 0.945);
   width: 25vw;
-  min-height: 200vh;
+  margin-top: 20vh;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
   display: flex;
   flex-direction: column;
   font-family: "Montserrat", sans-serif;
