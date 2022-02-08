@@ -12,10 +12,13 @@ export const Header = ({ showTabFN, showContacts, setShowContacts }) => {
             <li className={style.nav_links_li}>Basics</li>
             <li className={style.nav_links_li}>Exercises</li>
             <li className={style.nav_links_li}>Articles</li>
-            <li class={style.nav_links_li}>
+            <li className={style.nav_links_li}>
               <button
                 className={style.btn}
-                onClick={() => showTabFN(showContacts, setShowContacts)}
+                onClick={() => (showTabFN(showContacts, setShowContacts))
+                
+                
+                }
               >
                 Ask Trainer
               </button>

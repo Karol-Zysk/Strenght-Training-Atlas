@@ -1,26 +1,22 @@
 import React from "react";
-import style from "./ExerciseCards.module.css";
+import style from "./Main.module.css";
 import { LoremIpsum } from "react-lorem-ipsum";
 
-const BigCard = ({ check,  }) => {
+const BigCard = ({ check }) => {
   return (
-    <div className={style.bigCard}>
-        <h1 className={style.nameh1}>{check.name}</h1>
-        <div style={{ display: "flex" }}>
-          <img
-            src={check.imgpng}
-            alt="img"
-            className={style.bigCardExImg}
-          ></img>
-          <div className={style.description}>
-            <h3 className={style.nameh2}>Target Muscle: {check.target}</h3>
-            <p className={style.big_card_paragraph}>
-              <b>Description: </b>
-              <LoremIpsum p={1} />
-            </p>
-          </div>
+    <div className={style.big_card}>
+      <span className={style.big_card_span}>{check.name}</span>
+      <div style={{ display: "grid" }}>
+        <img src={check.imgpng} alt="img" className={style.big_card_img}></img>
+        <div className={style.big_card_description_div}>
+          <p className={style.big_card_target}>Target Muscle: {check.target}</p>
+          <p className={style.big_card_description}>
+            Description:
+            <LoremIpsum p={1} />
+          </p>
         </div>
       </div>
+    </div>
   );
 };
 
