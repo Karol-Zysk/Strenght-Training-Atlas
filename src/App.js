@@ -5,8 +5,11 @@ import Header from "./components/Header/Header";
 import Contacts from "./components/Contacts/Contacts";
 import Footer from "./components/Footer/Footer";
 import style from "./App.module.css";
-import { BrowserRouter as Router } from "react-router-dom";
-import MainNavbar from "./components/Main/MainInfo/MainNavbar";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Exercises from "./Pages/Exercises";
+import Home from "./Pages/Home";
+import Basics from "./Pages/Basics";
+import Articles from "./Pages/Articles";
 
 const queryClient = new QueryClient();
 
@@ -25,7 +28,12 @@ function App(props) {
           <Header showTabFN={handleSetShowContacts} />
 
           <Contacts clickValue={showContacts} />
-          <MainNavbar />
+          <Routes>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/basics" element={<Basics />}></Route>
+            <Route path="/exercises/*" element={<Exercises />}></Route>
+            <Route path="/articles" element={<Articles />}></Route>
+          </Routes>
 
           <Footer />
         </div>

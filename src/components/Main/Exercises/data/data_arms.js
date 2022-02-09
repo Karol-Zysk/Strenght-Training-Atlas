@@ -1,4 +1,4 @@
-[{"name":"Legaan, water","target":"Data under hacking","imgpng":"https://robohash.org/nihilquivelit.png?size=150x150&set=set1"},
+const data_arms =[{"name":"Legaan, water","target":"Data under hacking","imgpng":"https://robohash.org/nihilquivelit.png?size=150x150&set=set1"},
 {"name":"Vulture, oriental white-backed","target":"Escort","imgpng":"https://robohash.org/laborumbeataesint.png?size=150x150&set=set1"},
 {"name":"Arctic fox","target":"Rio","imgpng":"https://robohash.org/delenitisitaut.png?size=150x150&set=set1"},
 {"name":"Gonolek, burchell's","target":"Escalade ESV","imgpng":"https://robohash.org/afugaquo.png?size=150x150&set=set1"},
@@ -198,3 +198,5 @@
 {"name":"Vulture, bengal","target":"Express 2500","imgpng":"https://robohash.org/fugiataliasquisquam.png?size=150x150&set=set1"},
 {"name":"Asiatic jackal","target":"MPV","imgpng":"https://robohash.org/modireiciendisaut.png?size=150x150&set=set1"},
 {"name":"Golden jackal","target":"Mountaineer","imgpng":"https://robohash.org/rerumconsequaturet.png?size=150x150&set=set1"}]
+
+export default data_arms

@@ -5,10 +5,11 @@ import BigCard from "../../BigCard";
 import SmallCards from "../../SmallCards";
 import photo from "./muscle.jpg";
 import text from "../../text";
+import data_back from "../../data/data_back"
 
-const Main = (props) => {
-  const fetchBodyParts = async () => {
-    const response = await fetch("./data3.json", {
+const Back = (props) => {
+   /* const fetchBodyParts = async () => {
+    const response = await fetch("%PUBLIC_URL%/data_chest.json", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -16,13 +17,14 @@ const Main = (props) => {
       },
     });
     return response.json();
-  };
-
+  }; */
+  const data = data_back;
+  
   const [check, setTitleCheck] = React.useState({});
   const [showBigCard, setShowBigCard] = React.useState(false);
 
-  const { data, status } = useQuery("bodyParts", fetchBodyParts);
-  console.log(check, status);
+  /*const { data, status } = useQuery("bodyParts", fetchBodyParts);
+  console.log(check, status);*/
   return (
     <>
       <div className={style.container}>
@@ -33,7 +35,7 @@ const Main = (props) => {
           <p className={style.muscle_info_description}>{text}</p>
         </div>
         <div className={style.card_container}>
-          {data?.slice(0, 15)?.map((bodyPart) => {
+          {data?.slice(0, 16)?.map((bodyPart) => {
             const card_check = (event) => {
               setTitleCheck((...value) => (value = bodyPart));
               setShowBigCard((prev) => (prev = true));
@@ -49,4 +51,4 @@ const Main = (props) => {
   );
 };
 
-export default Main;
+export default Back;

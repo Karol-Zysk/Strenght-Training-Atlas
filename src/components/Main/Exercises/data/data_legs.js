@@ -1,4 +1,4 @@
-[{"name":"Cercatetus concinnus","target":"Movies","imgpng":"https://robohash.org/explicaboanimiet.png?size=150x150&set=set1"},
+const data_legs =[{"name":"Cercatetus concinnus","target":"Movies","imgpng":"https://robohash.org/explicaboanimiet.png?size=150x150&set=set1"},
 {"name":"Macropus rufogriseus","target":"Kids","imgpng":"https://robohash.org/maioresanimimaxime.png?size=150x150&set=set1"},
 {"name":"Cereopsis novaehollandiae","target":"Shoes","imgpng":"https://robohash.org/enimmagnamsaepe.png?size=150x150&set=set1"},
 {"name":"Perameles nasuta","target":"Jewelry","imgpng":"https://robohash.org/inciduntdolordoloribus.png?size=150x150&set=set1"},
@@ -198,3 +198,5 @@
 {"name":"Graspus graspus","target":"Grocery","imgpng":"https://robohash.org/etdelenitimagni.png?size=150x150&set=set1"},
 {"name":"Crocodylus niloticus","target":"Sports","imgpng":"https://robohash.org/velitearumtenetur.png?size=150x150&set=set1"},
 {"name":"Otaria flavescens","target":"Outdoors","imgpng":"https://robohash.org/natusquiid.png?size=150x150&set=set1"}]
+
+export default data_legs
