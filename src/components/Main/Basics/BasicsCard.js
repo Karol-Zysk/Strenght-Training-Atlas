@@ -23,17 +23,27 @@ const BasicsCard = () => {
   });
 
   return (
-    <div className={style.container}>
-      <div className={style.basics_card}>
-        <img className={style.basics_card_logo} src={logo} alt="img"></img>
-        <div className={style.basic_flex_tab}>{BasicsTab}</div>
-        <div className={style.basics_info_card}>
-          <h3 className={style.basics_card_h3}>Program name: {targetTab.name}</h3>
-          <p>For: {targetTab.forWho}</p>
-          <p>Basics about program: {targetTab.info}</p>
+    <>
+      <div className={style.fakeNav}></div>
+      <div className={style.container}>
+        <div className={style.basics_card}>
+          <img className={style.basics_card_logo} src={logo} alt="img"></img>
+          <h2 className={style.basics_card_h2}>Training Programs</h2>
+          <div className={style.basic_flex_tab}>{BasicsTab}</div>
+          <div className={style.basics_info_card}>
+            <h3 className={style.basics_card_h3}>
+              Full program name: {targetTab.fullName}
+            </h3>
+            <p className={style.basics_card_paragraph}>
+              For: {targetTab.forWho}
+            </p>
+            <p className={style.basics_card_paragraph}>
+              About program: {targetTab.info}
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

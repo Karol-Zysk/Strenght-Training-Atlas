@@ -18,7 +18,7 @@
   box-shadow: 0rem 0rem 0.6rem 0.6rem rgba(255, 255, 255, 0.568);
   text-align: left;
   padding: 4rem 6rem 4rem 7rem;
-  margin: 5rem 0rem 3rem;
+  margin: 6rem 0rem 3rem;
   display: flex;
   flex-direction: column;
 }
@@ -39,16 +39,22 @@
 }
 
 .home_card_h3 {
-  padding: 1rem 0rem 0.8rem;
+  padding: 1rem 0rem 2rem;
 }
 
 .home_card_paragraph {
-  padding-bottom: 0.3rem;
-  font-size: 1.5rem;
+  padding-bottom: 3rem;
+  font-size: 1.7rem;
 }
 
 .home_card_ul > li {
-  padding: 0.4rem 0rem 0.5rem;
+  padding: 0.6rem 0rem 0.7rem;
 
-  font-size: 1.5rem;
+  font-size: 1.7rem;
+}
+
+.fakeNav {
+  width: 100vw;
+  height: 4.5vw;
+  background-color: black;
 }

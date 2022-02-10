@@ -17,8 +17,16 @@
   color: rgb(255, 255, 255);
   box-shadow: 0rem 0rem 0.6rem 0.6rem rgba(255, 255, 255, 0.568);
   text-align: left;
-  padding: 4rem 5rem 4rem 6rem;
-  margin: 0rem 0rem 3rem;
+  padding: 4rem 6rem 4rem 7rem;
+  display: flex;
+  flex-direction: column;
+  margin: 6rem 0rem 3rem;
+}
+
+.muscle_info_card_logo {
+  width: 20vw;
+  align-self: flex-end;
+  margin: 0vw 3vw 4vw;
 }
 
 .muscle_info_h2 {

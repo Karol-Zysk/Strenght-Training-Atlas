@@ -4,43 +4,45 @@ import logo from "./logo.PNG";
 
 const HomeCard = () => {
   return (
-    <div className={style.container}>
-      <div className={style.home_card}>
-        <img className={style.home_card_logo} src={logo} alt="img"></img>
-        {/* <h1 className={style.home_card_h1}>Strenght Training bible</h1> */}
-        <h3 className={style.home_card_h3}>From who:</h3>
-        <p className={style.home_card_paragraph}>
-          The website was created by an enthusiast of strength sports.
-        </p>
-        <h3 className={style.home_card_h3}>For who:</h3>
-        <p className={style.home_card_paragraph}>
-          For those who want to learn more about Strenght Training topic.
-        </p>
-        <h3 className={style.home_card_h3}>What can you learn out here?</h3>
+    <>
+      <div className={style.fakeNav}></div>
+      <div className={style.container}>
+        <div className={style.home_card}>
+          <img className={style.home_card_logo} src={logo} alt="img"></img>
+          {/* <h1 className={style.home_card_h1}>Strenght Training bible</h1> */}
 
-        <ul className={style.home_card_ul}>
-          <li>
-            You will find here, above all, in the Exercises tab, hundreds of
-            exercises divided into muscle groups. Each exercise has an animation
-            and a short description.
-          </li>
-          <li>
-            You will find here, above all, in the Exercises tab, hundreds of
-            exercises divided into muscle groups. Each exercise has an animation
-            and a short description.
-          </li>
-          <li>Basic principles of strength training in the Articles tab</li>
-          <li>
-            After logging in, a tab with articles written by our trainers is
-            available.
-          </li>
-          <li>
-            If you have any questions, feel free to contact our experts. you can
-            find contacts to them in the contacts tab.
-          </li>
-        </ul>
+          <h2 className={style.home_card_h3}>
+            Page created by an enthusiast of strength sports.
+          </h2>
+          <p className={style.home_card_paragraph}>
+            For those who want to learn more about Strenght Training.
+          </p>
+          <h3 className={style.home_card_h3}>What can you learn out here?</h3>
+
+          <ul className={style.home_card_ul}>
+            <li>
+              You will find here, above all, in the Exercises tab, hundreds of
+              exercises divided into muscle groups. Each exercise has an
+              animation and a short description.
+            </li>
+            <li>
+              You will find here, above all, in the Exercises tab, hundreds of
+              exercises divided into muscle groups. Each exercise has an
+              animation and a short description.
+            </li>
+            <li>Basic principles of strength training in the Articles tab</li>
+            <li>
+              After logging in, a tab with articles written by our trainers is
+              available.
+            </li>
+            <li>
+              If you have any questions, feel free to contact our experts. you
+              can find contacts to them in the contacts tab.
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

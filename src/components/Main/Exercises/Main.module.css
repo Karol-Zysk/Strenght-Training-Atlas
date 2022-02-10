@@ -12,6 +12,7 @@
   grid-column: 1 / -1;
   padding-top: 2vh;
   background-color: black;
+  height: 4.5vw;
 }
 
 .nav_links {
@@ -37,6 +38,7 @@
 }
 
 .card_container {
+  margin-top: 3rem;
   padding: 2vw 5vw 4vw 5vw;
   width: 100%;
   height: auto;
