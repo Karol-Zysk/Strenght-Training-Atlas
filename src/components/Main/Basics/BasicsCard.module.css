@@ -1,0 +1,47 @@
+.container {
+  width: 100vw;
+  height: auto;
+  background-color: rgb(0, 0, 0);
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../files/home-bg.png);
+  background-size: cover;
+}
+
+.basics_card {
+  width: 70vw;
+  height: auto;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  box-shadow: 0rem 0rem 0.6rem 0.6rem rgba(255, 255, 255, 0.568);
+  text-align: left;
+  padding: 4rem 6rem 4rem 7rem;
+  margin: 5rem 0rem 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.basics_card_logo {
+  width: 20vw;
+  align-self: flex-end;
+  margin: 0vw 3vw 4vw;
+}
+
+.basics_paragraph {
+  white-space: pre-line;
+  padding-bottom: 0.3rem;
+  font-size: 1.5rem;
+}
+
+.basic_flex_tab {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.basics_info_card {
+  min-height: 40vh;
+  width: 100%;
+}

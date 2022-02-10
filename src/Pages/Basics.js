@@ -1,7 +1,8 @@
-import React from 'react';
+import React from "react";
+import BasicsCard from "../components/Main/Basics/BasicsCard";
 
 const Basics = () => {
-    return <div>This is Basics Page</div>;
-}
+  return <BasicsCard />;
+};
 
 export default Basics;

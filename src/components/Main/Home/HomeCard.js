@@ -1,20 +1,22 @@
 import React from "react";
 import style from "./Home.module.css";
+import logo from "./logo.PNG";
 
 const HomeCard = () => {
   return (
     <div className={style.container}>
       <div className={style.home_card}>
-        <h1 className={style.home_card_h1}>Strenght Training bible</h1>
-        <h2 className={style.home_card_h2}>From who:</h2>
+        <img className={style.home_card_logo} src={logo} alt="img"></img>
+        {/* <h1 className={style.home_card_h1}>Strenght Training bible</h1> */}
+        <h3 className={style.home_card_h3}>From who:</h3>
         <p className={style.home_card_paragraph}>
           The website was created by an enthusiast of strength sports.
         </p>
-        <h2 className={style.home_card_h2}>For who:</h2>
+        <h3 className={style.home_card_h3}>For who:</h3>
         <p className={style.home_card_paragraph}>
           For those who want to learn more about Strenght Training topic.
         </p>
-        <h2 className={style.home_card_h2}>What can you learn out here?</h2>
+        <h3 className={style.home_card_h3}>What can you learn out here?</h3>
 
         <ul className={style.home_card_ul}>
           <li>

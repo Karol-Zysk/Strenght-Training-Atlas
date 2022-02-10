@@ -1,14 +1,11 @@
 import React from "react";
-import { useQuery } from "react-query";
 import style from "../../Main.module.css";
 import BigCard from "../../BigCard";
 import SmallCards from "../../SmallCards";
-import photo from "./muscle.jpg";
-import text from "../../text";
-import data_waist from "../../data/data_waist"
+import data_waist from "../../data/data_waist";
 
 const Waist = (props) => {
-   /* const fetchBodyParts = async () => {
+  /* const fetchBodyParts = async () => {
     const response = await fetch("%PUBLIC_URL%/data_chest.json", {
       method: "GET",
       headers: {
@@ -28,14 +25,8 @@ const Waist = (props) => {
   return (
     <>
       <div className={style.container}>
-        <div className={style.muscle_info}>
-          <h2 className={style.muscle_info_h2}>Chest</h2>
-          <img className={style.muscle_info_img} src={photo} alt="img"></img>
-          <p className={style.muscle_info_paragraph}>Muscle functions</p>
-          <p className={style.muscle_info_description}>{text}</p>
-        </div>
         <div className={style.card_container}>
-          {data?.slice(0, 16)?.map((bodyPart) => {
+          {data?.slice(0, 20)?.map((bodyPart) => {
             const card_check = () => {
               setTitleCheck((...value) => (value = bodyPart));
               setShowBigCard((prev) => (prev = true));
