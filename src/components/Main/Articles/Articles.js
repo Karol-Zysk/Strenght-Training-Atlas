@@ -67,6 +67,7 @@ class Articles extends React.Component {
     const index = articles.findIndex((x) => x._id === article._id);
     if (index >= 0) {
       articles[index] = article;
+      console.log(article.date);
       this.setState({ articles });
     }
     this.toggleModal();
@@ -85,38 +86,44 @@ class Articles extends React.Component {
 
   render() {
     return (
-      <div className={style.container}>
-        <div className={style.article_card}>
-          <img src={logo} alt="img" className={style.article_card_logo}></img>
+      <>
+        <div className={style.fakeNav}></div>
+        <div className={style.container}>
+          <div className={style.article_card}>
+            <img src={logo} alt="img" className={style.article_card_logo}></img>
 
-          <NotificationContainer />
-          <p>Articles</p>
-          <NewArticle onAdd={(article) => this.addArticle(article)} />
-          <Modal
-            isOpen={this.state.showEditModal}
-            ariaHideApp={false}
-            contentLabel="Edit Article"
-          >
-            <EditArticle
-              title={this.state.editArticle.title}
-              body={this.state.editArticle.body}
-              _id={this.state.editArticle._id}
-              onEdit={(article) => this.editArticle(article)}
-            />
-            <button onClick={() => this.toggleModal()}>Cancel</button>
-          </Modal>
-          {this.state.articles.map((article) => (
-            <Article
-              key={article._id}
-              title={article.title}
-              body={article.body}
-              _id={article._id}
-              onEdit={(article) => this.editArticleHandler(article)}
-              onDelete={(_id) => this.deleteArticle(_id)}
-            />
-          ))}
+            <NotificationContainer />
+            <p>Articles</p>
+            <NewArticle onAdd={(article) => this.addArticle(article)} />
+            <Modal
+              isOpen={this.state.showEditModal}
+              ariaHideApp={false}
+              contentLabel="Edit Article"
+            >
+              <EditArticle
+                title={this.state.editArticle.title}
+                body={this.state.editArticle.body}
+                _id={this.state.editArticle._id}
+                onEdit={(article) => this.editArticle(article)}
+              />
+              <button onClick={() => this.toggleModal()}>Cancel</button>
+            </Modal>
+            {this.state.articles.map((article) => (
+              <Article
+                avatar={article.avatar}
+                name={article.name}
+                date={article.date}
+                key={article._id}
+                title={article.title}
+                body={article.body}
+                _id={article._id}
+                onEdit={(article) => this.editArticleHandler(article)}
+                onDelete={(_id) => this.deleteArticle(_id)}
+              />
+            ))}
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 }

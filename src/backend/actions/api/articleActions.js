@@ -4,11 +4,14 @@ class ArticleActions {
   async saveArticle(request, response) {
     const title = request.body.title;
     const body = request.body.body;
+    const name = request.body.name;
+    const avatar = request.body.avatar;
+    const date = request.body.date;
 
     let article;
 
     try {
-      article = new Article({ title, body });
+      article = new Article({ title, body, name, avatar, date });
       await article.save();
     } catch (err) {
       return response.status(422).json({ message: err.message });
@@ -34,10 +37,17 @@ class ArticleActions {
     const id = request.params.id;
     const title = request.body.title;
     const body = request.body.body;
+    const name = request.body.name;
+    const avatar = request.body.avatar;
+    const date = request.body.date;
+    
 
     const article = await Article.findOne({ _id: id });
     article.title = title;
     article.body = body;
+    article.name = name;
+    article.avatar = avatar;
+    article.date = date;
     try {
       await article.save();
     } catch (err) {
