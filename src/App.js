@@ -9,7 +9,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Exercises from "./Pages/Exercises";
 import Home from "./Pages/Home";
 import Basics from "./Pages/Basics";
-import Articles from "./Pages/Articles";
+import ArticlesPage from "./Pages/ArticlesPage";
 
 const queryClient = new QueryClient();
 
@@ -32,7 +32,7 @@ function App(props) {
             <Route path="/" element={<Home />}></Route>
             <Route path="/basics" element={<Basics />}></Route>
             <Route path="/exercises/*" element={<Exercises />}></Route>
-            <Route path="/articles" element={<Articles />}></Route>
+            <Route path="/articles" element={<ArticlesPage />}></Route>
           </Routes>
 
           <Footer />
