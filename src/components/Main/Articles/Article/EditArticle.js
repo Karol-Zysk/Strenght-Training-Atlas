@@ -2,9 +2,12 @@ import React from "react";
 import { useState } from "react";
 import style from "../../Articles/Articles.module.css";
 
-const EditArticle = ({ onEdit, _id, body, title }) => {
+const EditArticle = ({ name, avatar, date, onEdit, _id, body, title }) => {
   const [newTitle, setTitle] = useState(title);
   const [newBody, setBody] = useState(body);
+
+  const [newAvatar, setAvatar] = React.useState(avatar);
+  const [newName, setName] = React.useState(name);
 
   const setBodyHandler = (event) => {
     const value = event.target.value;
@@ -16,11 +19,25 @@ const EditArticle = ({ onEdit, _id, body, title }) => {
     setTitle(value);
   };
 
+  const setAvatarHandler = (event) => {
+    const value = event.target.value;
+    setAvatar(value);
+  };
+
+  const setNameHandler = (event) => {
+    const value = event.target.value;
+    setName(value);
+  };
+
   const editArticle = () => {
     const article = {
       title: newTitle,
       body: newBody,
       _id: _id,
+      date: date,
+
+      avatar: newAvatar,
+      name: newName,
     };
     onEdit(article);
   };
@@ -35,12 +52,12 @@ const EditArticle = ({ onEdit, _id, body, title }) => {
           value={newTitle}
           onChange={setTitleHandler}
         ></input>
-        <label>Treść Artykułu: </label>
-        <textarea
-          placeholder="Write..."
-          onChange={setBodyHandler}
-          value={newBody}
-        ></textarea>
+        <label>Article Body </label>
+        <textarea onChange={setBodyHandler} value={newBody}></textarea>
+        <label>Link to avatar</label>
+        <input type="text" value={newAvatar} onChange={setAvatarHandler} />
+        <label>Your Name</label>
+        <input type="text" value={newName} onChange={setNameHandler} />
       </div>
       <button onClick={editArticle}>Zapisz</button>
     </div>

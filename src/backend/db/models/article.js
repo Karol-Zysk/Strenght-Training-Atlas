@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const moment = require("moment");
 
 const ArticleSchema = new mongoose.Schema({
   title: {
@@ -18,7 +19,10 @@ const ArticleSchema = new mongoose.Schema({
     default:
       "https://top-ten.tv/wp-content/uploads/2013/03/The-US-Office-Dwight-Schrute.jpg",
   },
-  date: { type: String, default: Date },
+  date: {
+    type: String,
+    default: () => moment().format("D MMMM  YYYY, h:mm:ss a"),
+  },
 });
 
 const Article = mongoose.model("Article", ArticleSchema);

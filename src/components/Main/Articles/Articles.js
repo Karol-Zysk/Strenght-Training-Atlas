@@ -67,6 +67,7 @@ class Articles extends React.Component {
     const index = articles.findIndex((x) => x._id === article._id);
     if (index >= 0) {
       articles[index] = article;
+      
       console.log(article.date);
       this.setState({ articles });
     }
@@ -101,6 +102,9 @@ class Articles extends React.Component {
               contentLabel="Edit Article"
             >
               <EditArticle
+                name={this.state.editArticle.name}
+                avatar={this.state.editArticle.avatar}
+                date={this.state.editArticle.date}
                 title={this.state.editArticle.title}
                 body={this.state.editArticle.body}
                 _id={this.state.editArticle._id}
