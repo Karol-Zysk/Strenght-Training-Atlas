@@ -10,6 +10,7 @@ require("./db/mongoose");
 
 //parser
 app.use(bodyParser.json());
+app.use(express.json())
 
 app.use(cors());
 

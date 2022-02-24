@@ -10,6 +10,8 @@ import Exercises from "./Pages/Exercises";
 import Home from "./Pages/Home";
 import Basics from "./Pages/Basics";
 import ArticlesPage from "./Pages/ArticlesPage";
+import Login from "./Pages/Login";
+import Register from "./Pages/Register";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +35,8 @@ function App(props) {
             <Route path="/basics" element={<Basics />}></Route>
             <Route path="/exercises/*" element={<Exercises />}></Route>
             <Route path="/articles" element={<ArticlesPage />}></Route>
+            <Route path="/register" element={<Register />}></Route>
+            <Route path="/login" element={<Login />}></Route>
           </Routes>
 
           <Footer />
