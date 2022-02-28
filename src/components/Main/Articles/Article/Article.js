@@ -1,5 +1,7 @@
 import React from "react";
 import style from "../../Articles/Articles.module.css";
+import jwt from "jsonwebtoken"
+
 
 const Article = ({
   _id,
@@ -11,6 +13,18 @@ const Article = ({
   onEdit,
   date,
 }) => {
+
+React.useEffect(() => {
+  const token = localStorage.getItem('token')
+  if (token) {
+    const user = jwt.decode(token)
+   if (!user) {
+    localStorage.removeItem('token')
+    window.location.href = '/'
+  }}
+}, [])
+
+
   return (
     <div className={style.article}>
       <h2 className={style.article_h2}>{title}</h2>

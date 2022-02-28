@@ -19,8 +19,9 @@ const Login = () => {
     if (data.user) {
       alert("login sucsesfull");
       window.location.href = "/articles";
+    } else {
+      alert("Please check your username and password");
     }
-    console.log(data);
   }
 
   return (

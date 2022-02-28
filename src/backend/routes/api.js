@@ -47,8 +47,10 @@ router.post("/login", async (req, res) => {
     );
     return res.json({ status: "ok", user: token });
   } else {
-    return res.json({ status: "error", user: false });
+    return res.json({ status: "error", user: false }
+    );
   }
-});
+}
+);
 
 module.exports = router;
