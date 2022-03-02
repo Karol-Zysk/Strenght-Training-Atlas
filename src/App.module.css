@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+.App {
+  overflow: hidden;
+  text-align: center;
+  display: grid;
+  /* overflow: hidden; */
+  font-size: 30px;
+  font-family: "Roboto", sans-serif;
+
+  background-color: rgba(255, 255, 255, 0.178);
+}
