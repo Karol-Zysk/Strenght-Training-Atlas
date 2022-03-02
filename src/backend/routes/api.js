@@ -28,7 +28,7 @@ router.post("/register", async (req, res) => {
     });
     res.json({ status: "ok" });
   } catch (err) {
-    res.json({ status: "error", error: "Duplicated email" });
+    res.json({ status: "error", error: "User with this username or email already exist" });
   }
 });
 
@@ -56,9 +56,9 @@ router.get("/name", async (req, res) => {
 
   try {
     const decoded = jwt.verify(token, "secret123");
-    const email = decoded.email;
+    const name = decoded.name;
     const user = await User.findOne({
-      email: email,
+      name: name,
     });
 
     return res.json({ status: "ok", name: user.name });

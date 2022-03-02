@@ -1,11 +1,20 @@
 import React from "react";
 import style from "../../Articles/Articles.module.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,  } from "react-router-dom";
 import jwt from "jsonwebtoken";
 
-const Article = ({ _id, avatar, title, body, onDelete, onEdit, date }) => {
-  let navigate = useNavigate();
-  const [name, setName] = React.useState();
+const Article = ({
+  _id,
+  avatar,
+  name,
+  title,
+  body,
+  onDelete,
+  onEdit,
+  date,
+}) => {
+  const { replace } = useNavigate();
+  const [loginName, setLoginName] = React.useState();
   async function getName() {
     const req = await fetch("http://localhost:3001/api/name", {
       headers: {
@@ -14,11 +23,9 @@ const Article = ({ _id, avatar, title, body, onDelete, onEdit, date }) => {
     });
     const data = await req.json();
     if (data.status === "ok") {
-      setName(data.name);
-
-      console.log(data.name);
+      setLoginName(data.name);
     } else {
-      alert(data.error);
+      console.log(data.error);
     }
   }
 
@@ -28,9 +35,14 @@ const Article = ({ _id, avatar, title, body, onDelete, onEdit, date }) => {
       const user = jwt.decode(token);
       if (!user) {
         localStorage.removeItem("token");
-        navigate("/login");
+        replace({
+          goTo: "/login",
+          
+        })
+        
       } else {
         getName();
+        
       }
     }
   }, []);
@@ -50,21 +62,25 @@ const Article = ({ _id, avatar, title, body, onDelete, onEdit, date }) => {
       />
       <p>{name}</p>
       <p>{date}</p>
-      <button onClick={() => onDelete(_id)}>Usuń</button>
-      <button
-        onClick={() =>
-          onEdit({
-            avatar: avatar,
-            name: name,
-            date: date,
-            title: title,
-            body: body,
-            _id: _id,
-          })
-        }
-      >
-        Edytuj
-      </button>
+      {name === loginName && (
+        <>
+          <button onClick={() => onDelete(_id)}>Usuń</button>
+          <button
+            onClick={() =>
+              onEdit({
+                avatar: avatar,
+                name: name,
+                date: date,
+                title: title,
+                body: body,
+                _id: _id,
+              })
+            }
+          >
+            Edytuj
+          </button>
+        </>
+      )}
     </div>
   );
 };

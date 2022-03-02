@@ -1,12 +1,28 @@
 import React from "react";
 import style from "../../Articles/Articles.module.css";
 
-const NewArticle = ({ onAdd, avatar, name, article, title, _id, body }) => {
+const NewArticle = ({ onAdd, avatar, title, _id, body }) => {
+  const [loginName, setLoginName] = React.useState();
+  async function getName() {
+    const req = await fetch("http://localhost:3001/api/name", {
+      headers: {
+        "x-access-token": localStorage.getItem("token"),
+      },
+    });
+    const data = await req.json();
+    if (data.status === "ok") {
+      setLoginName(data.name);
+
+      console.log(data.name);
+    }
+  }
+
+  getName();
+
   const [showModal, setShowModal] = React.useState(false);
   const [newTitle, setTitle] = React.useState("");
   const [newBody, setBody] = React.useState("");
   const [newAvatar, setAvatar] = React.useState("");
-  const [newName, setName] = React.useState("");
 
   const setBodyHandler = (event) => {
     const value = event.target.value;
@@ -23,23 +39,18 @@ const NewArticle = ({ onAdd, avatar, name, article, title, _id, body }) => {
     setAvatar(value);
   };
 
-  const setNameHandler = (event) => {
-    const value = event.target.value;
-    setName(value);
-  };
-
   const addArticle = () => {
     const article = {
       title: newTitle,
       body: newBody,
       _id: _id,
       avatar: newAvatar,
-      name: newName,
+      name: loginName,
     };
+    console.log(loginName);
     onAdd(article);
     setTitle("");
     setAvatar("");
-    setName("");
     setBody("");
     setShowModal(!showModal);
   };
@@ -53,14 +64,14 @@ const NewArticle = ({ onAdd, avatar, name, article, title, _id, body }) => {
         <textarea type="text" value={body} onChange={setBodyHandler} />
         <label>Link to avatar</label>
         <input type="text" value={avatar} onChange={setAvatarHandler} />
-        <label>Your Name</label>
-        <input type="text" value={name} onChange={setNameHandler} />
 
         <button onClick={() => addArticle()}>Dodaj Artykuł</button>
       </div>
     </div>
   ) : (
-    <button onClick={() => setShowModal(true)}>Nowa notatka</button>
+    loginName !== undefined && (
+      <button onClick={() => setShowModal(true)}>aaaaa</button>
+    )
   );
 };
 
