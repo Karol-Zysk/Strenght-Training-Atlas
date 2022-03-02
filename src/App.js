@@ -12,6 +12,7 @@ import Basics from "./Pages/Basics";
 import ArticlesPage from "./Pages/ArticlesPage";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
+import { LoginProvider } from "./context/loginContext";
 
 const queryClient = new QueryClient();
 
@@ -25,23 +26,25 @@ function App(props) {
 
   return (
     <Router>
-      <QueryClientProvider client={queryClient}>
-        <div className={style.App}>
-          <Header showTabFN={handleSetShowContacts} />
+      <LoginProvider>
+        <QueryClientProvider client={queryClient}>
+          <div className={style.App}>
+            <Header showTabFN={handleSetShowContacts} />
 
-          <Contacts clickValue={showContacts} />
-          <Routes>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="/basics" element={<Basics />}></Route>
-            <Route path="/exercises/*" element={<Exercises />}></Route>
-            <Route path="/articles" element={<ArticlesPage />}></Route>
-            <Route path="/register" element={<Register />}></Route>
-            <Route path="/login" element={<Login />}></Route>
-          </Routes>
+            <Contacts clickValue={showContacts} />
+            <Routes>
+              <Route path="/" element={<Home />}></Route>
+              <Route path="/basics" element={<Basics />}></Route>
+              <Route path="/exercises/*" element={<Exercises />}></Route>
+              <Route path="/articles" element={<ArticlesPage />}></Route>
+              <Route path="/register" element={<Register />}></Route>
+              <Route path="/login" element={<Login />}></Route>
+            </Routes>
 
-          <Footer />
-        </div>
-      </QueryClientProvider>
+            <Footer />
+          </div>
+        </QueryClientProvider>
+      </LoginProvider>
     </Router>
   );
 }

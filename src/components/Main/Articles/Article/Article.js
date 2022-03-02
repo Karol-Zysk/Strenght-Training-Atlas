@@ -1,7 +1,8 @@
 import React from "react";
 import style from "../../Articles/Articles.module.css";
-import { useNavigate,  } from "react-router-dom";
-import jwt from "jsonwebtoken";
+import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { LoginContext } from "../../../../context/loginContext";
 
 const Article = ({
   _id,
@@ -13,42 +14,18 @@ const Article = ({
   onEdit,
   date,
 }) => {
-  const { replace } = useNavigate();
-  const [loginName, setLoginName] = React.useState();
-  async function getName() {
-    const req = await fetch("http://localhost:3001/api/name", {
-      headers: {
-        "x-access-token": localStorage.getItem("token"),
-      },
-    });
-    const data = await req.json();
-    if (data.status === "ok") {
-      setLoginName(data.name);
-    } else {
-      console.log(data.error);
-    }
-  }
+  const loginName = useContext(LoginContext);
 
-  React.useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      const user = jwt.decode(token);
-      if (!user) {
-        localStorage.removeItem("token");
-        replace({
-          goTo: "/login",
-          
-        })
-        
-      } else {
-        getName();
-        
-      }
-    }
-  }, []);
+  let navigate = useNavigate();
+
+  const logout = () => {
+    localStorage.removeItem("token");
+    navigate("/login");
+  };
 
   return (
     <div className={style.article}>
+      <button onClick={logout}>LogOut</button>
       <h2 className={style.article_h2}>{title}</h2>
       <p className={style.article_paragraph}>{body}</p>
       <img

@@ -2,11 +2,16 @@ import React from "react";
 import style from "./header.module.css";
 import logo from "./logo.PNG";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { LoginContext } from "../../context/loginContext";
 
 export const Header = ({ showTabFN, showContacts, setShowContacts }) => {
+  let loginName = useContext(LoginContext);
+
   return (
     <>
       <header className={style.header}>
+        <h3>Hello {loginName}</h3>
         <img className={style.logo} src={logo} alt="logo"></img>
         <nav>
           <ul className={style.nav_links}>

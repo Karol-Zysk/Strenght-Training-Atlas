@@ -1,12 +1,10 @@
 import React from "react";
 import style from "./Pages.module.css";
 import logo from "../components/files/logo.PNG";
-import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
-  let navigate = useNavigate();
 
   async function loginUser(event) {
     event.preventDefault();
@@ -22,7 +20,7 @@ const Login = () => {
     if (data.user) {
       localStorage.setItem("token", data.user);
       alert("login sucsesfull");
-      navigate("/articles");
+      window.location.href = "/articles";
     } else {
       alert("Please check your username and password");
     }

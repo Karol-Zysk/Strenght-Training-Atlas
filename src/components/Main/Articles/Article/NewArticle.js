@@ -1,8 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import style from "../../Articles/Articles.module.css";
 
 const NewArticle = ({ onAdd, avatar, title, _id, body }) => {
   const [loginName, setLoginName] = React.useState();
+  let navigate = useNavigate();
   async function getName() {
     const req = await fetch("http://localhost:3001/api/name", {
       headers: {
@@ -68,10 +70,13 @@ const NewArticle = ({ onAdd, avatar, title, _id, body }) => {
         <button onClick={() => addArticle()}>Dodaj Artykuł</button>
       </div>
     </div>
+  ) : loginName === undefined ? (
+    <>
+      <p>Adding articles available for logged in users</p>
+      <button onClick={() => navigate("/login")}>Sign Up</button>
+    </>
   ) : (
-    loginName !== undefined && (
-      <button onClick={() => setShowModal(true)}>aaaaa</button>
-    )
+    <button onClick={() => setShowModal(true)}>aaaaa</button>
   );
 };
 

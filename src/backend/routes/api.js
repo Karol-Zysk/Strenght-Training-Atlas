@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const ArticleActions = require("../actions/api/articleActions");
 const User = require("../db/models/user");
-const jwt = require('jsonwebtoken')
+const jwt = require("jsonwebtoken");
 
 //pobieranie wszystkich
 router.get("/articles", ArticleActions.getAllArticles);
@@ -28,7 +28,10 @@ router.post("/register", async (req, res) => {
     });
     res.json({ status: "ok" });
   } catch (err) {
-    res.json({ status: "error", error: "User with this username or email already exist" });
+    res.json({
+      status: "error",
+      error: "User with this username or email already exist",
+    });
   }
 });
 

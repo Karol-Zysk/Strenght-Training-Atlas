@@ -10,6 +10,7 @@ import {
   NotificationContainer,
   NotificationManager,
 } from "react-notifications";
+import "react-notifications/lib/notifications.css";
 
 class Articles extends React.Component {
   constructor(props) {
@@ -67,8 +68,6 @@ class Articles extends React.Component {
     const index = articles.findIndex((x) => x._id === article._id);
     if (index >= 0) {
       articles[index] = article;
-      
-      console.log(article.date);
       this.setState({ articles });
     }
     this.toggleModal();
@@ -90,12 +89,12 @@ class Articles extends React.Component {
       <>
         <div className={style.fakeNav}></div>
         <div className={style.container}>
+          <NotificationContainer />
           <div className={style.article_card}>
             <img src={logo} alt="img" className={style.article_card_logo}></img>
 
-            <NotificationContainer />
             <p>Articles</p>
-            <NewArticle onAdd={(article) => this.addArticle(article)} />
+
             <Modal
               isOpen={this.state.showEditModal}
               ariaHideApp={false}
@@ -112,6 +111,7 @@ class Articles extends React.Component {
               />
               <button onClick={() => this.toggleModal()}>Cancel</button>
             </Modal>
+
             {this.state.articles.map((article) => (
               <Article
                 avatar={article.avatar}
@@ -125,6 +125,7 @@ class Articles extends React.Component {
                 onDelete={(_id) => this.deleteArticle(_id)}
               />
             ))}
+            <NewArticle onAdd={(article) => this.addArticle(article)} />
           </div>
         </div>
       </>
