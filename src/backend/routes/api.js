@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const ArticleActions = require("../actions/api/articleActions");
 const User = require("../db/models/user");
-const jwt = require("jsonwebtoken");
+const jwt = require('jsonwebtoken')
 
 //pobieranie wszystkich
 router.get("/articles", ArticleActions.getAllArticles);
@@ -47,10 +47,25 @@ router.post("/login", async (req, res) => {
     );
     return res.json({ status: "ok", user: token });
   } else {
-    return res.json({ status: "error", user: false }
-    );
+    return res.json({ status: "error", user: false });
   }
-}
-);
+});
+
+router.get("/name", async (req, res) => {
+  const token = req.headers["x-access-token"];
+
+  try {
+    const decoded = jwt.verify(token, "secret123");
+    const email = decoded.email;
+    const user = await User.findOne({
+      email: email,
+    });
+
+    return res.json({ status: "ok", name: user.name });
+  } catch (error) {
+    console.log(error);
+    res.json({ status: "error", error: "invalid token" });
+  }
+});
 
 module.exports = router;

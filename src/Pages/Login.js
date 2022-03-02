@@ -1,10 +1,12 @@
 import React from "react";
 import style from "./Pages.module.css";
 import logo from "../components/files/logo.PNG";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
+  let navigate = useNavigate();
 
   async function loginUser(event) {
     event.preventDefault();
@@ -15,10 +17,12 @@ const Login = () => {
       },
       body: JSON.stringify({ email, password }),
     });
+
     const data = await response.json();
     if (data.user) {
+      localStorage.setItem("token", data.user);
       alert("login sucsesfull");
-      window.location.href = "/articles";
+      navigate("/articles");
     } else {
       alert("Please check your username and password");
     }

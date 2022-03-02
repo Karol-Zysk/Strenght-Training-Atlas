@@ -4,7 +4,6 @@ const { port } = require("./config");
 const apiRouter = require("./routes/api");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-
 //db
 require("./db/mongoose");
 

@@ -1,29 +1,39 @@
 import React from "react";
 import style from "../../Articles/Articles.module.css";
-import jwt from "jsonwebtoken"
+import { useNavigate } from "react-router-dom";
+import jwt from "jsonwebtoken";
 
+const Article = ({ _id, avatar, title, body, onDelete, onEdit, date }) => {
+  let navigate = useNavigate();
+  const [name, setName] = React.useState();
+  async function getName() {
+    const req = await fetch("http://localhost:3001/api/name", {
+      headers: {
+        "x-access-token": localStorage.getItem("token"),
+      },
+    });
+    const data = await req.json();
+    if (data.status === "ok") {
+      setName(data.name);
 
-const Article = ({
-  _id,
-  name,
-  avatar,
-  title,
-  body,
-  onDelete,
-  onEdit,
-  date,
-}) => {
+      console.log(data.name);
+    } else {
+      alert(data.error);
+    }
+  }
 
-React.useEffect(() => {
-  const token = localStorage.getItem('token')
-  if (token) {
-    const user = jwt.decode(token)
-   if (!user) {
-    localStorage.removeItem('token')
-    window.location.href = '/'
-  }}
-}, [])
-
+  React.useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      const user = jwt.decode(token);
+      if (!user) {
+        localStorage.removeItem("token");
+        navigate("/login");
+      } else {
+        getName();
+      }
+    }
+  }, []);
 
   return (
     <div className={style.article}>

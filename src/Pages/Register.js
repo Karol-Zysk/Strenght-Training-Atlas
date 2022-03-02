@@ -1,11 +1,13 @@
 import React from "react";
 import style from "./Pages.module.css";
 import logo from "../components/files/logo.PNG";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
-  const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
+  const [name, setName] = React.useState("");
+  let navigate = useNavigate();
 
   async function registerUser(event) {
     event.preventDefault();
@@ -14,11 +16,13 @@ const Register = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ name, email, password }),
+      body: JSON.stringify({ email, password, name }),
     });
     const data = await response.json();
 
-    console.log(data);
+    if (data.status === "ok") {
+      navigate("/login");
+    }
   }
 
   return (
@@ -30,12 +34,6 @@ const Register = () => {
           <h2 className={style.pages_h2}>Register</h2>
           <form onSubmit={registerUser}>
             <input
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              type="text"
-              placeholder="Name"
-            />
-            <input
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               type="email"
@@ -46,6 +44,12 @@ const Register = () => {
               onChange={(e) => setPassword(e.target.value)}
               type="password"
               placeholder="Password"
+            />
+            <input
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              type="text"
+              placeholder="Name"
             />
             <input type="submit" value="Register"></input>
           </form>
