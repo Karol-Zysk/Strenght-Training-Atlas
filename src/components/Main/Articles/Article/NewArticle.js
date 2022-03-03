@@ -71,10 +71,10 @@ const NewArticle = ({ onAdd, avatar, title, _id, body }) => {
       </div>
     </div>
   ) : loginName === undefined ? (
-    <>
+    <div style={{ display: "flex", justifyItems: "space-between" }}>
       <p>Adding articles available for logged in users</p>
       <button onClick={() => navigate("/login")}>Sign Up</button>
-    </>
+    </div>
   ) : (
     <button onClick={() => setShowModal(true)}>aaaaa</button>
   );

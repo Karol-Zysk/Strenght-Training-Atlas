@@ -32,14 +32,17 @@ function App(props) {
             <Header showTabFN={handleSetShowContacts} />
 
             <Contacts clickValue={showContacts} />
-            <Routes>
-              <Route path="/" element={<Home />}></Route>
-              <Route path="/basics" element={<Basics />}></Route>
-              <Route path="/exercises/*" element={<Exercises />}></Route>
-              <Route path="/articles" element={<ArticlesPage />}></Route>
-              <Route path="/register" element={<Register />}></Route>
-              <Route path="/login" element={<Login />}></Route>
-            </Routes>
+
+            
+              <Routes>
+                <Route path="/" element={<Home />}></Route>
+                <Route path="/basics" element={<Basics />}></Route>
+                <Route path="/articles" element={<ArticlesPage />}></Route>
+                <Route path="/register" element={<Register />}></Route>
+                <Route path="/login" element={<Login />}></Route>
+                <Route path="/exercises/*" element={<Exercises />}></Route>
+              </Routes>
+            
 
             <Footer />
           </div>

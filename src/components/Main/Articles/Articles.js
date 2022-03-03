@@ -1,9 +1,7 @@
 import React from "react";
-import style from "./Articles.module.css";
 import Article from "./Article/Article";
 import NewArticle from "./Article/NewArticle";
 import EditArticle from "./Article/EditArticle";
-import logo from "./logo.PNG";
 import Modal from "react-modal";
 import axios from "../../../axios";
 import {
@@ -87,47 +85,39 @@ class Articles extends React.Component {
   render() {
     return (
       <>
-        <div className={style.fakeNav}></div>
-        <div className={style.container}>
-          <NotificationContainer />
-          <div className={style.article_card}>
-            <img src={logo} alt="img" className={style.article_card_logo}></img>
+        <NotificationContainer />
 
-            <p>Articles</p>
+        <Modal
+          isOpen={this.state.showEditModal}
+          ariaHideApp={false}
+          contentLabel="Edit Article"
+        >
+          <EditArticle
+            name={this.state.editArticle.name}
+            avatar={this.state.editArticle.avatar}
+            date={this.state.editArticle.date}
+            title={this.state.editArticle.title}
+            body={this.state.editArticle.body}
+            _id={this.state.editArticle._id}
+            onEdit={(article) => this.editArticle(article)}
+          />
+          <button onClick={() => this.toggleModal()}>Cancel</button>
+        </Modal>
 
-            <Modal
-              isOpen={this.state.showEditModal}
-              ariaHideApp={false}
-              contentLabel="Edit Article"
-            >
-              <EditArticle
-                name={this.state.editArticle.name}
-                avatar={this.state.editArticle.avatar}
-                date={this.state.editArticle.date}
-                title={this.state.editArticle.title}
-                body={this.state.editArticle.body}
-                _id={this.state.editArticle._id}
-                onEdit={(article) => this.editArticle(article)}
-              />
-              <button onClick={() => this.toggleModal()}>Cancel</button>
-            </Modal>
-
-            {this.state.articles.map((article) => (
-              <Article
-                avatar={article.avatar}
-                name={article.name}
-                date={article.date}
-                key={article._id}
-                title={article.title}
-                body={article.body}
-                _id={article._id}
-                onEdit={(article) => this.editArticleHandler(article)}
-                onDelete={(_id) => this.deleteArticle(_id)}
-              />
-            ))}
-            <NewArticle onAdd={(article) => this.addArticle(article)} />
-          </div>
-        </div>
+        {this.state.articles.map((article) => (
+          <Article
+            avatar={article.avatar}
+            name={article.name}
+            date={article.date}
+            key={article._id}
+            title={article.title}
+            body={article.body}
+            _id={article._id}
+            onEdit={(article) => this.editArticleHandler(article)}
+            onDelete={(_id) => this.deleteArticle(_id)}
+          />
+        ))}
+        <NewArticle onAdd={(article) => this.addArticle(article)} />
       </>
     );
   }

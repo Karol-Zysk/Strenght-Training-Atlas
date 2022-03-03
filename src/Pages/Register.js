@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./Pages.module.css";
-import logo from "../components/files/logo.PNG";
 import { useNavigate } from "react-router-dom";
+import MainContainer from "./MainContainer";
 
 const Register = () => {
   const [email, setEmail] = React.useState("");
@@ -26,36 +26,30 @@ const Register = () => {
   }
 
   return (
-    <>
-      <div className={style.fakeNav}></div>
-      <div className={style.container}>
-        <div className={style.pages_card}>
-          <img src={logo} alt="img" className={style.pages_card_logo}></img>
-          <h2 className={style.pages_h2}>Register</h2>
-          <form onSubmit={registerUser}>
-            <input
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              type="email"
-              placeholder="Email"
-            />
-            <input
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              type="password"
-              placeholder="Password"
-            />
-            <input
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              type="text"
-              placeholder="Name"
-            />
-            <input type="submit" value="Register"></input>
-          </form>
-        </div>
-      </div>
-    </>
+    <MainContainer>
+      <h2 className={style.pages_h2}>Register</h2>
+      <form onSubmit={registerUser}>
+        <input
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          type="email"
+          placeholder="Email"
+        />
+        <input
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          type="password"
+          placeholder="Password"
+        />
+        <input
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          type="text"
+          placeholder="Name"
+        />
+        <input type="submit" value="Register"></input>
+      </form>
+    </MainContainer>
   );
 };
 

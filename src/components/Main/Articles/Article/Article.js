@@ -1,6 +1,5 @@
 import React from "react";
 import style from "../../Articles/Articles.module.css";
-import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { LoginContext } from "../../../../context/loginContext";
 
@@ -16,16 +15,11 @@ const Article = ({
 }) => {
   const loginName = useContext(LoginContext);
 
-  let navigate = useNavigate();
-
-  const logout = () => {
-    localStorage.removeItem("token");
-    navigate("/login");
-  };
+  
 
   return (
     <div className={style.article}>
-      <button onClick={logout}>LogOut</button>
+      
       <h2 className={style.article_h2}>{title}</h2>
       <p className={style.article_paragraph}>{body}</p>
       <img

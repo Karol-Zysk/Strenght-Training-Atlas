@@ -21,8 +21,7 @@ export const LoginProvider = ({ children }) => {
       console.log(data.error);
     }
   }
-
-  React.useEffect(() => {
+  const elo = () => {
     const token = localStorage.getItem("token");
     if (token) {
       const user = jwt.decode(token);
@@ -33,9 +32,13 @@ export const LoginProvider = ({ children }) => {
         getName();
       }
     }
-  }, []);
+  };
+
+  elo();
 
   return (
-    <LoginContext.Provider value={loginName}>{children}</LoginContext.Provider>
+    <LoginContext.Provider value={{ name: loginName }}>
+      {children}
+    </LoginContext.Provider>
   );
 };
