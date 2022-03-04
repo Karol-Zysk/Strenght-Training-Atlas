@@ -14,20 +14,20 @@ const LoginPanel = () => {
     navigate("/login");
   };
   return (
-    <div style={{ display: "flex" }}>
-      <p>Hello {loginName}</p>
+    <div className={style.loginPanel}>
+      <p className={style.loginPanel_paragraph}>Hello {loginName}</p>
       {!loginName ? (
-        <>
-          <button className={style.btn2} onClick={() => navigate("/register")}>
+        <div className={style.loginPanel_btn_div}>
+          <button className={style.loginPanel_btn} onClick={() => navigate("/register")}>
             Register
           </button>
-          <button className={style.btn2} onClick={() => navigate("/login")}>
+          <button className={style.loginPanel_btn} onClick={() => navigate("/login")}>
             Sign Up
           </button>
-        </>
+        </div>
       ) : (
-        <button className={style.btn2} onClick={logout}>
-          LogOut
+        <button className={style.loginPanel_btn} onClick={logout}>
+          Logout
         </button>
       )}
     </div>

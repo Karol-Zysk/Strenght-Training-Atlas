@@ -6,7 +6,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(../files/home-bg.png);
+  background-image: url(../../files/home-bg.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: cover;
 }
 
