@@ -1,26 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { LoginContext } from "../../../../context/loginContext";
 import style from "../../Articles/Articles.module.css";
 
 const NewArticle = ({ onAdd, avatar, title, _id, body }) => {
-  const [loginName, setLoginName] = React.useState();
+  let [loginName] = useContext(LoginContext);
   let navigate = useNavigate();
-  async function getName() {
-    const req = await fetch("http://localhost:3001/api/name", {
-      headers: {
-        "x-access-token": localStorage.getItem("token"),
-      },
-    });
-    const data = await req.json();
-    if (data.status === "ok") {
-      setLoginName(data.name);
-
-      console.log(data.name);
-    }
-  }
-
-  getName();
-
   const [showModal, setShowModal] = React.useState(false);
   const [newTitle, setTitle] = React.useState("");
   const [newBody, setBody] = React.useState("");
@@ -70,7 +56,7 @@ const NewArticle = ({ onAdd, avatar, title, _id, body }) => {
         <button onClick={() => addArticle()}>Dodaj Artykuł</button>
       </div>
     </div>
-  ) : loginName === undefined ? (
+  ) : !loginName ? (
     <div style={{ display: "flex", justifyItems: "space-between" }}>
       <p>Adding articles available for logged in users</p>
       <button onClick={() => navigate("/login")}>Sign Up</button>

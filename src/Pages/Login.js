@@ -30,22 +30,34 @@ const Login = () => {
 
   return (
     <MainContainer>
-      <h2 className={style.pages_h2}>Login</h2>
-      <form onSubmit={loginUser}>
-        <input
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          type="email"
-          placeholder="Email"
-        />
-        <input
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          type="password"
-          placeholder="Password"
-        />
-        <input type="submit" value="Login"></input>
-      </form>
+      <section>
+        <h2 className={style.pages_h2}>Login</h2>
+        <form onSubmit={loginUser}>
+          <div className={style.divRegister}>
+            <p>Email</p>{" "}
+            <input
+              className={style.inputRegister}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              type="email"
+              placeholder="Email"
+            />
+          </div>
+          <div className={style.divRegister}>
+            <p>Password</p>{" "}
+            <input
+              className={style.inputRegister}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              type="password"
+              placeholder="Password"
+            />
+          </div>
+          <button className={style.btn} type="submit" value="Login">
+            Login
+          </button>
+        </form>
+      </section>
     </MainContainer>
   );
 };

@@ -22,16 +22,14 @@ router.delete("/articles/:id", ArticleActions.deleteArticle);
 router.post("/register", async (req, res) => {
   try {
     await User.create({
-      name: req.body.name,
+      
       email: req.body.email,
       password: req.body.password,
+      name: req.body.name
     });
     res.json({ status: "ok" });
   } catch (err) {
-    res.json({
-      status: "error",
-      error: "User with this username or email already exist",
-    });
+    return res.status(409).json({ message: err.message });
   }
 });
 

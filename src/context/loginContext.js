@@ -17,11 +17,12 @@ export const LoginProvider = ({ children }) => {
     const data = await req.json();
     if (data.status === "ok") {
       setLoginName(data.name);
+      console.log(data.name)
     } else {
       console.log(data.error);
     }
   }
-  const elo = () => {
+  const getToken = () => {
     const token = localStorage.getItem("token");
     if (token) {
       const user = jwt.decode(token);
@@ -34,10 +35,10 @@ export const LoginProvider = ({ children }) => {
     }
   };
 
-  elo();
+  getToken();
 
   return (
-    <LoginContext.Provider value={{ name: loginName }}>
+    <LoginContext.Provider value={[loginName, setLoginName]}>
       {children}
     </LoginContext.Provider>
   );
