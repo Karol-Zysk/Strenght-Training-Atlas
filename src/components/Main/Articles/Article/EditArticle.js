@@ -59,7 +59,9 @@ const EditArticle = ({ name, avatar, date, onEdit, _id, body, title }) => {
         <label>Your Name</label>
         <input type="text" value={newName} onChange={setNameHandler} />
       </div>
-      <button onClick={editArticle}>Zapisz</button>
+      <button className={style.btn} onClick={editArticle}>
+        Save
+      </button>
     </div>
   );
 };

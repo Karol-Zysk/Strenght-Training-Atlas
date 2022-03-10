@@ -43,18 +43,18 @@ const NewArticle = ({ onAdd, avatar, title, _id, body }) => {
     setShowModal(!showModal);
   };
   return showModal ? (
-    <div className={style.article}>
-      <div style={{ display: "flex", flexDirection: "column" }}>
-        <label>Title:</label>
-        <input type="text" value={title} onChange={setTitleHandler} />
+    <div className={style.new_article_div}>
+      <label>Title:</label>
+      <input type="text" value={title} onChange={setTitleHandler} />
 
-        <label>Article Body:</label>
-        <textarea type="text" value={body} onChange={setBodyHandler} />
-        <label>Link to avatar</label>
-        <input type="text" value={avatar} onChange={setAvatarHandler} />
+      <label>Article Body:</label>
+      <textarea type="text" value={body} onChange={setBodyHandler} />
+      <label>Link to avatar</label>
+      <input type="text" value={avatar} onChange={setAvatarHandler} />
 
-        <button onClick={() => addArticle()}>Dodaj Artykuł</button>
-      </div>
+      <button className={style.btn} onClick={() => addArticle()}>
+        Dodaj Artykuł
+      </button>
     </div>
   ) : !loginName ? (
     <div style={{ display: "flex", justifyItems: "space-between" }}>

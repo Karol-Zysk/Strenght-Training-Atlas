@@ -1,10 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500");
 
 header {
+  height: 18vh;
   box-sizing: border-box;
   z-index: 98;
   position: sticky;
-  top: 0;
+  top: 1px;
   margin: 0;
   padding: 0;
   background-image: linear-gradient(
@@ -24,7 +25,7 @@ header {
 }
 .logo {
   cursor: pointer;
-  height: 60%;
+  height: 40%;
 }
 
 .flexDiv {
@@ -37,7 +38,7 @@ header {
 nav {
   display: flex;
   flex-direction: row;
-  padding-bottom: 1rem;
+  padding-bottom: 0.5rem;
 }
 
 .nav_links {
@@ -45,8 +46,9 @@ nav {
 }
 
 .nav_links_li {
+  font-size: 1.5rem;
   display: inline-block;
-  padding: 0rem 1rem;
+  padding: 0rem 0.8rem;
   transition: 0.3s ease;
   list-style: none;
   text-decoration: none;
@@ -59,7 +61,7 @@ nav {
 }
 
 .btn {
-  padding: 0.9rem 0.8rem;
+  padding: 0.8rem 0.7rem;
   background-color: rgb(97, 148, 214);
   border: none;
   border-radius: 30px;
@@ -67,7 +69,7 @@ nav {
   transition: 0.3s ease;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 .btn:hover {
@@ -75,6 +77,8 @@ nav {
 }
 
 .header {
+  position: sticky;
+  top: 0;
   grid-column: 1 / -1;
   grid-row: 1 / 2;
 }
@@ -93,6 +97,7 @@ nav {
 }
 
 .headerNav > li {
+  font-size: 1rem;
   margin: 1vw;
   margin-bottom: 1vw;
   margin-right: 2vw;
@@ -125,12 +130,12 @@ nav {
   margin-right: 1rem;
   background-color: transparent;
   color: rgba(255, 255, 255, 0.918);
-  font-size: 1.1rem;
+  font-size: 1rem;
   border: none;
   font-weight: 500;
   cursor: pointer;
 }
 
 .loginPanel_paragraph {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
 }

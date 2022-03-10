@@ -1,4 +1,5 @@
 import React from "react";
+import style from "./Articles.module.css";
 import Article from "./Article/Article";
 import NewArticle from "./Article/NewArticle";
 import EditArticle from "./Article/EditArticle";
@@ -88,6 +89,7 @@ class Articles extends React.Component {
         <NotificationContainer />
 
         <Modal
+          style={{ width: "40%" }}
           isOpen={this.state.showEditModal}
           ariaHideApp={false}
           contentLabel="Edit Article"
@@ -101,7 +103,9 @@ class Articles extends React.Component {
             _id={this.state.editArticle._id}
             onEdit={(article) => this.editArticle(article)}
           />
-          <button onClick={() => this.toggleModal()}>Cancel</button>
+          <button className={style.btn} onClick={() => this.toggleModal()}>
+            Cancel
+          </button>
         </Modal>
 
         {this.state.articles.map((article) => (

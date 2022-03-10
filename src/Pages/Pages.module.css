@@ -44,7 +44,7 @@
 .pages_h2 {
   text-transform: uppercase;
   font-weight: 800;
-  color: rgb(180, 141, 11);
+  color: rgb(219, 162, 55);
   word-spacing: 1rem;
   letter-spacing: 0.2rem;
   padding-bottom: 1.5rem;
@@ -162,7 +162,7 @@ form {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 1.5rem;
-  color: white;
+  color: rgb(0, 0, 0);
   width: max-content;
   align-self: flex-start;
   margin-top: 1.5rem;
