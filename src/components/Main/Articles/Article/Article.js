@@ -47,7 +47,7 @@ const Article = ({
         <>
           <div className={style.flexDiv}>
             <button className={style.btn} onClick={() => onDelete(_id)}>
-              Usuń
+              Delete
             </button>
             <button
               className={style.btn}
@@ -62,7 +62,7 @@ const Article = ({
                 })
               }
             >
-              Edytuj
+              Edit
             </button>
           </div>
         </>

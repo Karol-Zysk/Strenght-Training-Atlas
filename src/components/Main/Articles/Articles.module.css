@@ -9,7 +9,7 @@
 
 .article_left {
   width: 85%;
-  padding: 0.5rem 1rem 0rem 0.5rem;
+  padding: 0.5rem 0rem 0rem 0.5rem;
 }
 
 .article_right {
@@ -34,8 +34,10 @@
 }
 
 .article_avatar {
-  width: 100%;
+  width: 90%;
   background-size: contain;
+  border: 2px solid white;
+  border-radius: 15px;
 }
 
 .article_name {
@@ -82,7 +84,7 @@ textarea {
 
 .btn {
   margin-right: 1rem;
-  padding: 0.4rem 0.7rem;
+  padding: 0.5rem 0.8rem;
   background-color: rgb(97, 148, 214);
   border: none;
   border-radius: 30px;
@@ -90,9 +92,9 @@ textarea {
   transition: 0.3s ease;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: rgb(0, 0, 0);
-  width: max-content;
+  width: 6rem;
   align-self: flex-start;
   margin-top: 1.5rem;
   align-self: flex-end;

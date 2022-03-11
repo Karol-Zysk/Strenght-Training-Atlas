@@ -3,6 +3,7 @@ import style from "./contacts.module.css";
 import photo from "./Trainer1.jpg";
 import photo2 from "./Trainer2.jpg";
 import photo3 from "./Trainer3.jpg";
+import ContactEmail from "./ContactEmail";
 
 const cardData = [
   {
@@ -34,6 +35,7 @@ const cardData = [
 ];
 
 export const Contacts = ({ clickValue }) => {
+ 
   const [cards, setCards] = React.useState(cardData);
 
   return (
@@ -71,13 +73,7 @@ export const Contacts = ({ clickValue }) => {
               <b>Motto:</b> {trainer.motto}
             </p>
             <div className={style.questionary}>
-              <textarea
-                className={style.mail_area}
-                defaultValue={"Ask a question...."}
-              ></textarea>
-              <button className={style.btn} type="submit">
-                send
-              </button>
+              <ContactEmail/>
             </div>
           </div>
 

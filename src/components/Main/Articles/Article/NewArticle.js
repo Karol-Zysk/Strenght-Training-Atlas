@@ -62,7 +62,9 @@ const NewArticle = ({ onAdd, avatar, title, _id, body }) => {
       <button onClick={() => navigate("/login")}>Sign Up</button>
     </div>
   ) : (
-    <button onClick={() => setShowModal(true)}>aaaaa</button>
+    <button className={style.btn} onClick={() => setShowModal(true)}>
+      New Article
+    </button>
   );
 };
 
