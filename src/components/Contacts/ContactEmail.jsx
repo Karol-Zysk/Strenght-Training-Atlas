@@ -1,5 +1,5 @@
 import React from "react";
-import ReCAPTCHA from "react-google-recaptcha";
+
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 
@@ -27,10 +27,9 @@ const ContactEmail = () => {
     e.target.reset();
   };
 
-  function onChange(value) {
-    console.log("Captcha value:", value);
-  }
+  
   return (
+    
     <form ref={form} onSubmit={sendEmail}>
       <label>Name</label>
       <input type="text" name="user_name" />
@@ -38,11 +37,6 @@ const ContactEmail = () => {
       <input type="email" name="user_email" />
       <label>Message</label>
       <textarea name="message" />
-      <ReCAPTCHA
-        sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
-        onChange={onChange}
-      />
-      <input type="submit" value="Send" />
     </form>
   );
 };

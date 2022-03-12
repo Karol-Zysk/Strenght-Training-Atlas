@@ -4,6 +4,9 @@ import photo from "./Trainer1.jpg";
 import photo2 from "./Trainer2.jpg";
 import photo3 from "./Trainer3.jpg";
 import ContactEmail from "./ContactEmail";
+import { useContext } from "react";
+
+import { LoginContext } from "../../context/loginContext";
 
 const cardData = [
   {
@@ -35,7 +38,8 @@ const cardData = [
 ];
 
 export const Contacts = ({ clickValue }) => {
- 
+  let [loginName] = useContext(LoginContext);
+
   const [cards, setCards] = React.useState(cardData);
 
   return (
@@ -73,7 +77,7 @@ export const Contacts = ({ clickValue }) => {
               <b>Motto:</b> {trainer.motto}
             </p>
             <div className={style.questionary}>
-              <ContactEmail/>
+              {loginName ? <ContactEmail /> : <p>Log in to write message</p>}
             </div>
           </div>
 
