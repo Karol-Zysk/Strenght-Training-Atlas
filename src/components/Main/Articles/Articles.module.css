@@ -73,7 +73,7 @@ input {
   flex-direction: row;
 }
 
-textarea {
+.textarea_newArticle {
   width: 100%;
   min-height: 50vh;
   font-size: 1.5rem;

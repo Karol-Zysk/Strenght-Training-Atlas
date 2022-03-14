@@ -48,7 +48,7 @@ const NewArticle = ({ onAdd, avatar, title, _id, body }) => {
       <input type="text" value={title} onChange={setTitleHandler} />
 
       <label>Article Body:</label>
-      <textarea type="text" value={body} onChange={setBodyHandler} />
+      <textarea className={style.textarea_newArticle} type="text" value={body} onChange={setBodyHandler} />
       <label>Link to avatar</label>
       <input type="text" value={avatar} onChange={setAvatarHandler} />
 

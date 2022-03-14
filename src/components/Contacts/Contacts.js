@@ -4,7 +4,7 @@ import photo from "./Trainer1.jpg";
 import photo2 from "./Trainer2.jpg";
 import photo3 from "./Trainer3.jpg";
 import ContactEmail from "./ContactEmail";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 import { LoginContext } from "../../context/loginContext";
 
@@ -39,12 +39,12 @@ const cardData = [
 
 export const Contacts = ({ clickValue }) => {
   let [loginName] = useContext(LoginContext);
-
+  
   const [cards, setCards] = React.useState(cardData);
 
   return (
     <nav className={clickValue ? style.nav_menu_active : style.nav_menu}>
-      <h2 className={style.contactsH2}>Contacts</h2>
+      <h3 className={style.contactsH2}>Contacts</h3>
       {cards.map((trainer) => (
         <div className={style.trainers}>
           <p className={style.paragraph}>
@@ -77,7 +77,11 @@ export const Contacts = ({ clickValue }) => {
               <b>Motto:</b> {trainer.motto}
             </p>
             <div className={style.questionary}>
-              {loginName ? <ContactEmail /> : <p>Log in to write message</p>}
+              {loginName ? (
+                <ContactEmail loginName={loginName} />
+              ) : (
+                <p>Log in to write message</p>
+              )}
             </div>
           </div>
 
