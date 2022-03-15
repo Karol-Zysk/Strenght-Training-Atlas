@@ -19,9 +19,8 @@ const queryClient = new QueryClient();
 function App(props) {
   const [showContacts, setShowContacts] = React.useState(null);
 
-  const handleSetShowContacts = (event) => {
+  const handleSetShowContacts = () => {
     setShowContacts(!showContacts);
-    event.preventDefault();
   };
 
   return (

@@ -16,7 +16,7 @@ const LoginPanel = () => {
   };
   return (
     <div className={style.loginPanel}>
-      <p className={style.loginPanel_paragraph}>Hello {loginName}</p>
+      <p className={style.loginPanel_paragraph}>{loginName ? `Hi ${loginName} !` : null}</p>
       {!loginName ? (
         <div className={style.loginPanel_btn_div}>
           <button

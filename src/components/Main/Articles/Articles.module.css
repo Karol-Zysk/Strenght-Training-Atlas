@@ -122,7 +122,7 @@ input {
   background-color: black;
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 600px) {
   .article {
     border: 3px solid rgba(177, 177, 177, 0.322);
     padding: 2rem 0.5rem 2rem 0rem;

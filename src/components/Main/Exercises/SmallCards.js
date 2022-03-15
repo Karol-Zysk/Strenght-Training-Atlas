@@ -2,6 +2,13 @@ import React from "react";
 import style from "./Main.module.css";
 
 const SmallCards = ({ bodyPart, card_check }) => {
+  const scrollDownHandler = () => {
+    card_check();
+    if (window.innerWidth < 720) {
+      window.scrollTo({ top: 1000, behavior: "smooth" });
+    }
+  };
+
   return (
     <div className={style.small_card}>
       <div className={style.img_container}>
@@ -13,7 +20,7 @@ const SmallCards = ({ bodyPart, card_check }) => {
         ></img>
 
         <div className={style.overlay}>
-          <button className={style.btn} onClick={card_check}>
+          <button className={style.btn} onClick={scrollDownHandler}>
             Viev more
           </button>
         </div>

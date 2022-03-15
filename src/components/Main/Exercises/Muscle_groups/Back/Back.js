@@ -28,10 +28,10 @@ const Back = (props) => {
         
         <div className={style.card_container}>
           {data?.slice(0, 20)?.map((bodyPart) => {
-            function card_check(event) {
+            function card_check() {
               setTitleCheck((...value) => (value = bodyPart));
               setShowBigCard((prev) => (prev = true));
-              event.preventDefault();
+              ;
             }
             return <SmallCards bodyPart={bodyPart} card_check={card_check} />;
           })}

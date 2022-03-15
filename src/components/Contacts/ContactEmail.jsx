@@ -1,5 +1,5 @@
 import React from "react";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import style from "./contacts.module.css";
 
@@ -23,7 +23,7 @@ const ContactEmail = ({ loginName }) => {
           e.target.children[1].disabled = "true";
           e.target.children[1].placeholder =
             "You can write next message in one hour";
-          e.target.children[1].style.color = "black";
+          e.target.children[1].style.color = "white";
           e.target.children[3].disabled = "true";
         },
         (error) => {
@@ -34,7 +34,7 @@ const ContactEmail = ({ loginName }) => {
   };
 
   return (
-    <form ref={form} onSubmit={sendEmail}>
+    <form className={style.contact_form}ref={form} onSubmit={sendEmail}>
       <label className={style.contacts_label}>Message</label>
       <textarea
         className={style.contacts_textarea}
@@ -47,6 +47,7 @@ const ContactEmail = ({ loginName }) => {
         value={loginName}
         type="text"
         name="user_name"
+        readOnly
       />
 
       <input

@@ -25,16 +25,13 @@ export const Header = ({ showTabFN, showContacts, setShowContacts }) => {
               <Link to="/articles" className={style.nav_links_li}>
                 Articles
               </Link>
-
-              <li className={style.nav_links_li}>
-                <button
-                  className={style.btn}
-                  onClick={() => showTabFN(showContacts, setShowContacts)}
-                >
-                  Ask Trainer
-                </button>
-              </li>
             </ul>
+            <button
+              className={style.btn}
+              onClick={() => showTabFN(showContacts, setShowContacts)}
+            >
+              Ask Trainer
+            </button>
           </nav>
         </div>
       </header>

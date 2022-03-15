@@ -1,5 +1,5 @@
 const basicsData = [
-  {
+  { id: 1,
     name: "PUSH-PULL",
     fullName: "Push-Pull",
     forWho: "Intermediate, Advanced",
@@ -13,7 +13,7 @@ const basicsData = [
 
        Pulling: back, biceps, and forearms`,
   },
-  {
+  {id: 2,
     name: "FBW",
     fullName: "Full body workout",
     forWho: "Begginer, Intermediate, Advanced",
@@ -23,7 +23,7 @@ const basicsData = [
     
     When performing full-body workouts, you don’t want to waste time doing isolation exercises, You want to get the biggest, hardest exercises done for the biggest muscle stimulation.`
   },
-  {
+  {id: 3,
     name: "HIT",
     fullName: "High intensity training",
     forWho: "Advanced",
@@ -36,7 +36,7 @@ const basicsData = [
      As a result, high-intensity workouts are generally kept brief. After a high-intensity workout, as with any workout, the body requires time to recover and produce the responses stimulated during the workout, so there is more emphasis on rest and recovery in the HIT philosophy than in most other weight training methods.
       `,
   },
-  {
+  {id: 4,
     name: "SPLIT",
     fullName: "Split",
     forWho: "Begginer, Intermediate, Advanced",

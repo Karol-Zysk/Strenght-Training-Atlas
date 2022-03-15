@@ -17,7 +17,7 @@ export const LoginProvider = ({ children }) => {
     const data = await req.json();
     if (data.status === "ok") {
       setLoginName(data.name);
-      console.log(data.name);
+      ;
     } else {
       console.log(data.error);
     }

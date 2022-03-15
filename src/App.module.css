@@ -5,7 +5,7 @@
 }
 
 .App {
-  overflow: hidden;
+  /* overflow: hidden; */
   text-align: center;
   position: relative;
   display: grid;

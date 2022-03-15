@@ -16,7 +16,7 @@ const BasicsCard = () => {
       event.preventDefault();
     };
     return (
-      <nav onClick={takeTargetTab} className={"skew_menu"}>
+      <nav key={program.id} onClick={takeTargetTab} className={"skew_menu"}>
         <ul className={"skew_menu_ul"}>
           <li className={"skew_menu_li"}>
             <span className={"skew_menu_span"}>{program.name}</span>

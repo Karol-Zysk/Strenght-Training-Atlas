@@ -78,7 +78,7 @@ nav {
 }
 
 .header {
-  position: sticky;
+  position: relative;
   top: 0;
   grid-column: 1 / -1;
   grid-row: 1 / 2;
@@ -163,8 +163,10 @@ nav {
   
 
   .nav_links_li {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     padding: 0rem 1.5vw;
+    align-self: stretch;
+    margin-bottom: 1rem;
   }
 
   .nav_links_li:hover {
@@ -181,6 +183,16 @@ nav {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 0.7rem;
+    justify-self: right;
+    align-self: right;
+    
+  }
+
+  nav{
+    justify-content: space-between;
+    align-items: center;
+    align-content: stretch;
+
   }
 
   .btn:hover {
@@ -230,10 +242,10 @@ nav {
     margin-right: 0rem;
     margin-left: 1rem;
 
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
 
   .loginPanel_paragraph {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 }
