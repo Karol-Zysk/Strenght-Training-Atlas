@@ -44,7 +44,7 @@ export const Contacts = ({ clickValue }) => {
 
   return (
     <nav className={clickValue ? style.nav_menu_active : style.nav_menu}>
-      <h3 className={style.contactsH2}>Contacts</h3>
+      
       {cards.map((trainer) => (
         <div className={style.trainers}>
           <p className={style.paragraph}>

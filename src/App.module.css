@@ -7,6 +7,7 @@
 .App {
   overflow: hidden;
   text-align: center;
+  position: relative;
   display: grid;
   /* overflow: hidden; */
   font-size: 30px;

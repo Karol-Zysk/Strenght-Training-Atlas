@@ -22,6 +22,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0rem 1.5rem 0rem 1.5rem;
+  width: 100%;
 }
 .logo {
   cursor: pointer;
@@ -138,4 +139,99 @@ nav {
 
 .loginPanel_paragraph {
   font-size: 1.1rem;
+}
+
+@media only screen and (max-width: 400px) {
+  body {
+    width: 100%;
+  }
+  header {
+    width: 100%;
+    height: 10vh;
+  }
+  .logo {
+    display: none;
+  }
+
+  .flexDiv {
+    display: flex;
+    flex-direction: column;
+  }
+
+  
+
+  .nav_links_li {
+    font-size: 0.7rem;
+    padding: 0rem 0.5rem;
+  }
+
+  .nav_links_li:hover {
+    color: rgb(97, 148, 214);
+  }
+
+  .btn {
+    padding: 0.4rem 0.3rem;
+    background-color: rgb(97, 148, 214);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 0.7rem;
+  }
+
+  .btn:hover {
+    background-color: rgba(97, 148, 214, 0.808);
+  }
+
+  .header {
+    top: 0;
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+  }
+
+  .headerH1 {
+    align-self: flex-start;
+    padding: 3vh;
+  }
+
+  .headerNav {
+    justify-items: self-end;
+    display: flex;
+    flex-basis: 1;
+    align-self: flex-end;
+    list-style: none;
+  }
+
+  .headerNav > li {
+    font-size: 1.1rem;
+    margin: 1vw;
+    margin-bottom: 1vw;
+    margin-right: 2vw;
+    border: transparent solid 7px;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .loginPanel {
+    display: flex;
+    width: 100%;
+    align-self: flex-start;
+    justify-content: space-between;
+    justify-items: center;
+    align-items: center;
+    margin-top: 5px;
+  }
+
+  .loginPanel_btn {
+    margin-right: 0rem;
+    margin-left: 1rem;
+
+    font-size: 0.7rem;
+  }
+
+  .loginPanel_paragraph {
+    font-size: 0.8rem;
+  }
 }
