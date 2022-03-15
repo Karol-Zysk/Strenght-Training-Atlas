@@ -130,6 +130,7 @@ input {
     display: flex;
     flex-direction: column;
     justify-content: baseline;
+    background-color: rgba(0, 0, 0, 0.808);
   }
 
   .article_left {
@@ -161,7 +162,8 @@ input {
 
   .article_avatar {
     width: 100%;
-    background-size: contain;
+    aspect-ratio: 1 ;
+    background-size: auto;
     border: 2px solid white;
     border-radius: 15px;
   }
@@ -191,7 +193,7 @@ input {
     font-size: 0.9rem;
     padding: 0.5rem;
     border-radius: 10px;
-    margin: 0rem 8rem 0rem 1rem;
+    margin: 0rem 0rem 0rem 0rem;
   }
 
   .flexDiv {
@@ -201,16 +203,16 @@ input {
 
   .textarea_newArticle {
     width: 100%;
-    min-height: 250vh;
+    min-height: 25vh;
     font-size: 0.9rem;
     padding: 0.5rem;
     border-radius: 10px;
-    margin: 0rem 0rem 0rem 1rem;
+    margin: 0rem 0rem 0rem 0rem;
   }
 
   .btn {
     margin-right: 1rem;
-    padding: 0.3rem 0.4rem;
+    padding: 0.4rem 0.5rem;
     background-color: rgb(97, 148, 214);
     border: none;
     border-radius: 30px;
@@ -220,7 +222,7 @@ input {
     font-weight: 500;
     font-size: 0.9rem;
     color: rgb(0, 0, 0);
-    width: 6rem;
+    width: auto;
     align-self: flex-start;
     margin-top: 1rem;
     align-self: flex-end;
@@ -235,8 +237,6 @@ input {
     line-height: 1.5rem;
     font-size: 0.9rem;
   }
-
-  
 
   .fakeNav {
     width: 100vw;

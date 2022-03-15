@@ -53,7 +53,7 @@ const NewArticle = ({ onAdd, avatar, title, _id, body }) => {
       <input type="text" value={avatar} onChange={setAvatarHandler} />
 
       <button className={style.btn} onClick={() => addArticle()}>
-        Dodaj Artykuł
+        Add 
       </button>
     </div>
   ) : !loginName ? (

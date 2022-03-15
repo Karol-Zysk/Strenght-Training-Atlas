@@ -1,5 +1,4 @@
-.contact{
-  background-color: #00000000;
+.contact {
   margin: 0;
   padding: 0;
 }
@@ -9,30 +8,21 @@ ul {
   list-style: none;
 }
 
-.container{
-  background-color: #000000;
+.container {
   margin: 0;
   padding: 0;
 }
 
-.contact-area{
-  background-color: #000000;
+.contact-area {
   margin: 0;
-  padding: 0;
+  padding-top: 1.5rem;
 }
-
-
-
-
 
 .contact-content h6 {
   color: #f1f4f8;
   font-size: 15px;
   font-weight: 400;
 }
-
-
-
 
 .contact-social > ul {
   display: inline-flex;
@@ -55,9 +45,7 @@ ul {
   max-width: 210px;
 }
 
-section,
-footer {
-  background: #000000;
+section {
   color: #ffffff;
 }
 
@@ -72,4 +60,21 @@ footer img {
 
 .hover-target {
   font-size: 40px;
+}
+
+@media only screen and (max-width: 400px) {
+  footer p {
+    padding: 20px 0;
+    font-size: 1rem;
+  }
+
+  .contact-social ul li a {
+    color: #c5c7ca;
+    display: inline-block;
+    height: 40px;
+    padding-top: 7px;
+    transition: all 0.4s ease 0s;
+    width: 50px;
+    font-size: 2rem;
+  }
 }

@@ -39,7 +39,7 @@ const basicsData = [
   {
     name: "SPLIT",
     fullName: "Split",
-    forWho: "Aegginer, Antermediate, Advanced",
+    forWho: "Begginer, Intermediate, Advanced",
     info: `A workout split is how you divide up your workouts throughout the week either by body region, movement, specific body part, or by lift. This divide-and-conquer approach to exercise allows bodybuilders and general gym-goers to focus their efforts in a way that optimizes results.
 
     Instead of hoping for bigger muscles or more strength, you guarantee it by sticking to a plan proven to work. Workout splits allow you to work smarter and harder. 

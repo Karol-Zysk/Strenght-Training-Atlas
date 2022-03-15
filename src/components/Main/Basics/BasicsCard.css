@@ -47,7 +47,6 @@
   color: blue;
 }
 
-
 .skew_menu_span {
   display: block;
   padding: 1rem 2rem;
@@ -107,5 +106,122 @@
   100% {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .home_card {
+    background-color: rgba(0, 0, 0, 0.698);
+    padding: 1rem 0.5rem 2rem 0.7rem;
+    line-height: 1.5rem;
+    min-height: 45vh;
+    font-size: 0.7rem;
+  }
+
+  .tabs {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 1rem;
+  }
+
+  .skew_menu {
+    text-align: center;
+  }
+
+  .skew_menu_ul {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    transform: skew(-25deg);
+  }
+
+  .skew_menu_li {
+  
+    background: #fff;
+    float: left;
+    border-right: 1px solid #eee;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    color: #555;
+    font-weight: bolder;
+    transition: all 0.3s linear;
+    cursor: pointer;
+  }
+  .skew_menu_li:first-child {
+    border-radius: 7px 0 0 7px;
+  }
+
+  .skew_menu_li:last-child {
+    border-right: none;
+    border-radius: 0 7px 7px 0;
+  }
+
+  .skew_menu_li:hover {
+    background: #eee;
+    color: blue;
+  }
+
+  .skew_menu_span {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: inherit;
+    text-decoration: none;
+    transform: skew(25deg);
+  }
+
+  .basics_tab_content {
+    margin-top: 15px;
+    position: relative;
+    padding: 0.5rem 0.1rem;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0);
+  }
+
+  .basics_tab_content .basics_textItem {
+    display: none;
+    transform: translateY(100%);
+  }
+
+  .show {
+    display: block;
+    transform: translateY(0);
+    animation: change 0.49s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  }
+
+  .show2 {
+    display: block;
+    transform: translateY();
+    animation: change2 0.49s cubic-bezier(0.175, 0.885, 0.32, 1.275) backwards;
+  }
+
+  .textItem {
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.2px;
+    margin-top: 1rem;
+  }
+
+  @keyframes change {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes change2 {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
 }

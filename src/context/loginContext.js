@@ -38,7 +38,7 @@ export const LoginProvider = ({ children }) => {
   getToken();
 
   return (
-    <LoginContext.Provider value={[loginName, setLoginName]}>
+    <LoginContext.Provider value={[loginName,  setLoginName]}>
       {children}
     </LoginContext.Provider>
   );

@@ -1,6 +1,6 @@
 import "./footer.css";
 import logo from "../files/logo.PNG";
-import {AiOutlineFacebook, AiOutlineLinkedin} from "react-icons/ai"
+import { AiOutlineFacebook, AiOutlineLinkedin } from "react-icons/ai";
 
 export const Footer = () => {
   return (
@@ -14,7 +14,7 @@ export const Footer = () => {
                   <ul>
                     <li>
                       <a className="hover-target" href="facebook.com">
-                        <AiOutlineFacebook/>
+                        <AiOutlineFacebook />
                       </a>
                     </li>
                     <li>
@@ -28,13 +28,14 @@ export const Footer = () => {
             </div>
           </div>
         </div>
+
+        <footer>
+          <p>
+            Copyright &copy; 2022 <img src={logo} alt="logo" /> All Rights
+            Reserved.
+          </p>
+        </footer>
       </section>
-      <footer>
-        <p>
-          Copyright &copy; 2019 <img src={logo} alt="logo" /> All Rights
-          Reserved.
-        </p>
-      </footer>
     </>
   );
 };

@@ -27,19 +27,20 @@ const BasicsCard = () => {
   });
 
   return (
-    <>
+    <><div className="home_card">
       <div className={"tabs"}>{BasicsTab}</div>
       {showBasicTab ? (
         <div className={"basics_tab_content"}>
           <div className={infoCard ? "show" : "show2"}>
             <h3 >
-              Full program name: {targetTab.fullName}
+              Full program name: <b>{targetTab.fullName}</b>
             </h3>
-            <p className={"textItem"}>For: {targetTab.forWho}</p>
+            <p className={"textItem"}>For: <b>{targetTab.forWho}</b></p>
             <p className={"textItem"}>About program: {targetTab.info}</p>
           </div>
         </div>
       ) : null}
+      </div>
     </>
   );
 };

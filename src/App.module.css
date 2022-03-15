@@ -11,7 +11,10 @@
   display: grid;
   /* overflow: hidden; */
   font-size: 30px;
+  background-color: black;
   font-family: "Roboto", sans-serif;
-
-  background-color: rgba(255, 255, 255, 0.178);
+  background-image: url(../src/components/files/home-bg.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
