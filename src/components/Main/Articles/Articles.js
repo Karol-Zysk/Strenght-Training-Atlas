@@ -84,12 +84,28 @@ class Articles extends React.Component {
   }
 
   render() {
+    const customStyles = {
+      content: {
+        width: "70%",
+        height: "90vh",
+        backgroundColor: "rgba(0, 0, 0, 0.808)",
+        color: "white",
+        zIndex: "9999",
+        top: "50%",
+        left: "50%",
+        right: "auto",
+        bottom: "auto",
+        marginRight: "-50%",
+        transform: "translate(-50%, -50%)",
+      },
+    };
+
     return (
       <>
         <NotificationContainer />
 
         <Modal
-          style={{ width: "40%" }}
+          style={customStyles}
           isOpen={this.state.showEditModal}
           ariaHideApp={false}
           contentLabel="Edit Article"

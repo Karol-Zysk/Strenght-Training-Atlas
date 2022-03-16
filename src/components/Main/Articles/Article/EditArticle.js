@@ -56,8 +56,7 @@ const EditArticle = ({ name, avatar, date, onEdit, _id, body, title }) => {
         <textarea onChange={setBodyHandler} value={newBody}></textarea>
         <label>Link to avatar</label>
         <input type="text" value={newAvatar} onChange={setAvatarHandler} />
-        <label>Your Name</label>
-        <input type="text" value={newName} onChange={setNameHandler} />
+        
       </div>
       <button className={style.btn} onClick={editArticle}>
         Save

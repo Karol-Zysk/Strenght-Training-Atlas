@@ -11,7 +11,7 @@ import Home from "./Pages/Home";
 import Basics from "./Pages/Basics";
 import ArticlesPage from "./Pages/ArticlesPage";
 import Login from "./Pages/Login";
-import FormikRegister from "./Pages/FormikRegister";
+import Register from "./Pages/Register";
 import { LoginProvider } from "./context/loginContext";
 
 const queryClient = new QueryClient();
@@ -36,7 +36,7 @@ function App(props) {
               <Route path="/" element={<Home />}></Route>
               <Route path="/basics" element={<Basics />}></Route>
               <Route path="/articles" element={<ArticlesPage />}></Route>
-              <Route path="/register" element={<FormikRegister />}></Route>
+              <Route path="/register" element={<Register />}></Route>
               <Route path="/login" element={<Login />}></Route>
               <Route path="/exercises/*" element={<Exercises />}></Route>
             </Routes>
