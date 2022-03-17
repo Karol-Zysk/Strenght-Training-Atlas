@@ -13,7 +13,7 @@ import { useNavigate } from "react-router-dom";
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,12}$/;
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
-const REGISTER_URL = "http://localhost:3001/api/register";
+const REGISTER_URL = "https://stbible.herokuapp.com/api/register";
 
 const Register = () => {
   let navigate = useNavigate();
@@ -78,8 +78,7 @@ const Register = () => {
       setEmail("");
       setName("");
       setPassword("");
-      console.log(JSON.stringify(response?.data));
-      console.log(JSON.stringify(response));
+       
     } catch (err) {
       if (!err?.response) {
         setErrMsg("No Server Response");

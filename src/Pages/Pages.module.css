@@ -1,15 +1,12 @@
 .container {
   width: 100%;
   height: auto;
-  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
   font-family: "Montserrat", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(../components/files/home-bg.png);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
+ 
 }
 
 .pages_card {

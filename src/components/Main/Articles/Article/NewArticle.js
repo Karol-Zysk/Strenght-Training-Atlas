@@ -35,7 +35,6 @@ const NewArticle = ({ onAdd, avatar, title, _id, body }) => {
       avatar: newAvatar,
       name: loginName,
     };
-    console.log(loginName);
     onAdd(article);
     setTitle("");
     setAvatar("");

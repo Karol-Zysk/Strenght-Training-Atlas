@@ -9,7 +9,7 @@ export const LoginProvider = ({ children }) => {
   const navigate = useNavigate();
   const [loginName, setLoginName] = React.useState();
   async function getName() {
-    const req = await fetch("http://localhost:3001/api/name", {
+    const req = await fetch("https://stbible.herokuapp.com/api/name", {
       headers: {
         "x-access-token": localStorage.getItem("token"),
       },
@@ -19,7 +19,7 @@ export const LoginProvider = ({ children }) => {
       setLoginName(data.name);
       ;
     } else {
-      console.log(data.error);
+      // console.log(data.error);
     }
   }
   const getToken = () => {

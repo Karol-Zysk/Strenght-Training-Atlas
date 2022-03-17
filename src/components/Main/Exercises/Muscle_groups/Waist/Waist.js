@@ -16,7 +16,7 @@ const Waist = (props) => {
     return response.json();
   }; */
   const data = data_waist;
-  console.log(data);
+  // console.log(data);
   const [check, setTitleCheck] = React.useState({});
   const [showBigCard, setShowBigCard] = React.useState(false);
 

@@ -21,7 +21,7 @@ const SmallCards = ({ bodyPart, card_check }) => {
 
         <div className={style.overlay}>
           <button className={style.btn} onClick={scrollDownHandler}>
-            Viev more
+            View more
           </button>
         </div>
       </div>

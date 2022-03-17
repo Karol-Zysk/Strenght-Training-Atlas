@@ -16,7 +16,7 @@ export default function Chest() {
     return response.json();
   }; */
   const data = data_chest;
-  console.log(data);
+  // console.log(data);
   const [check, setTitleCheck] = React.useState({});
   const [showBigCard, setShowBigCard] = React.useState(false);
 

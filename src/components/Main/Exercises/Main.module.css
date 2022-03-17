@@ -1,6 +1,7 @@
 .container {
   background-color: rgba(0, 0, 0, 0);
   display: flex;
+  gap: 1rem;
   width: 100%;
   font-family: "Montserrat", sans-serif;
   justify-content: center;
@@ -36,25 +37,26 @@
 }
 
 .card_container {
-  margin-top: 3rem;
-  padding: 2vw 5vw 4vw 5vw;
+  margin-top: 0rem;
+  padding: 1vw 1vw 4vw 1vw;
   max-width: 100%;
-  height: auto;
+  height: min-content;
   display: grid;
-  grid-gap: 0.5vw;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 0.6vw;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
 }
 
 .small_card {
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.219);
   flex-direction: column;
-  border: 4px black solid;
-  border-bottom-left-radius: 1rem;
-  border-top-right-radius: 1rem;
+  border: 2px rgb(255, 255, 255) solid;
+  border-radius: 10px;
+  height: min-content;
 }
 
 .small_card:hover {
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.089);
+  transform: scale(105%);
   transition: ease 200ms;
 }
 
@@ -66,14 +68,10 @@
 }
 
 .small_card_title {
-  background-image: linear-gradient(
-    to bottom,
-    rgba(8, 8, 8, 0.582),
-    transparent
-  );
-  padding: 1.1rem;
-  font-size: 1rem;
-  font-weight: 600;
+ color: white;
+  padding: 0.2rem;
+  font-size: 0.9rem;
+  font-weight: 400;
   position: absolute;
   width: 100%;
   left: 0%;
@@ -81,27 +79,28 @@
 .big_card {
   color: white;
   height: auto;
-  background-color: rgba(0, 0, 0, 0.781);
+  background-color: rgba(255, 255, 255, 0.308);
   animation: big_card_show 1.5s ease forwards;
-  padding: 1vw 3vw 1vw 1vw;
-  border-left: 5px solid white;
+  padding: 1vw 1vw 1vw 1vw;
+  border: 4px solid white;
+  border-radius: 15px;
 }
 
 .big_card_span {
-  font-size: 2.2rem;
+  margin-top: 1rem;
+  font-size: 2rem;
   font-weight: 600;
 }
 
 .big_card_description {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   margin-left: 1.2rem;
-  line-height: 2rem;
+  line-height: 1.6rem;
 }
 
 .big_card_img {
-  margin-top: -2rem;
-  width: 100%;
-  padding-bottom: 3vw;
+  width: 90%;
+  padding-bottom: 1vw;
   justify-self: center;
 }
 
@@ -110,6 +109,7 @@
 }
 
 .big_card_target {
+  font-size: 1.4rem;
   padding-bottom: 2rem;
   padding-left: 1.2rem;
 }
@@ -131,11 +131,12 @@
 .btn {
   display: inline-block;
   margin-bottom: 2vh;
-  padding: 0.6rem 0.9rem;
-  background-color: rgb(97, 148, 214);
+  padding: 0.45rem 0.65rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.281);
   border: none;
   border-radius: 25px;
-  font-size: 1.1rem;
+  font-size: 0.8rem;
   cursor: pointer;
   transition: 0.3s ease;
   font-family: "Montserrat", sans-serif;
@@ -195,7 +196,7 @@
 @keyframes big_card_show {
   from {
     transform: translateX(400%);
-    width: 0vw;
+    width: 15vw;
   }
   to {
     transform: translateX(0%);
@@ -203,17 +204,7 @@
   }
 }
 
-@keyframes big_card_show {
-  from {
-    transform: translateX(200%);
-    width: 0vw;
-  }
-  to {
-    transform: translateX(0%);
 
-    width: 40vw;
-  }
-}
 
 @media only screen and (max-width: 600px) {
   .container {
@@ -303,12 +294,12 @@
     background-color: rgba(160, 160, 160, 0.596);
     animation: big_card_show 1.5s ease forwards;
     margin: 1rem;
-    padding: 1.5rem 1rem 1rem 1rem;
+    padding: 1.5rem 0rem 1rem 0rem;
     border-radius: 10px;
     margin-top: 1rem;
     align-self: center;
     
-    border-left: none;
+    border: none;
     
   }
 
