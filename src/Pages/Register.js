@@ -13,7 +13,6 @@ import { useNavigate } from "react-router-dom";
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,12}$/;
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
-const REGISTER_URL = "https://stbible.herokuapp.com/api/register";
 
 const Register = () => {
   let navigate = useNavigate();
@@ -66,7 +65,7 @@ const Register = () => {
     }
     try {
       const response = await axios.post(
-        REGISTER_URL,
+        "/register",
         JSON.stringify({ email, password, name }),
         {
           headers: { "Content-Type": "application/json" },

@@ -21,7 +21,6 @@ const Login = () => {
     const data = await response.json();
     if (data.user) {
       localStorage.setItem("token", data.user);
-      alert("login sucsesfull");
       navigate("/articles");
     } else {
       alert("Please check your username and password");

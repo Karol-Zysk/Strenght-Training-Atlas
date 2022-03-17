@@ -9,6 +9,30 @@ body {
 
 }
 
+body {
+  /* overflow: hidden; */
+  text-align: center;
+  position: relative;
+  display: grid;
+  /* overflow: hidden; */
+  font-size: 30px;
+  background-color: black;
+
+  font-family: "Roboto", sans-serif;
+  background-image: url(../src/components/files/home-bg.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    overflow: visible;
+    background-image: url(../src/components/files/home-bg-mobile.png);
+  }
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

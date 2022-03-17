@@ -4,7 +4,6 @@ import "./App.module.css";
 import Header from "./components/Header/Header";
 import Contacts from "./components/Contacts/Contacts";
 import Footer from "./components/Footer/Footer";
-import style from "./App.module.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Exercises from "./Pages/Exercises";
 import Home from "./Pages/Home";
@@ -27,7 +26,7 @@ function App(props) {
     <Router>
       <LoginProvider>
         <QueryClientProvider client={queryClient}>
-          <div className={style.App}>
+          
             <Header showTabFN={handleSetShowContacts} />
 
             <Contacts clickValue={showContacts} />
@@ -42,7 +41,7 @@ function App(props) {
             </Routes>
 
             <Footer />
-          </div>
+          
         </QueryClientProvider>
       </LoginProvider>
     </Router>

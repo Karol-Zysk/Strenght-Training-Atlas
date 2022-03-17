@@ -211,8 +211,10 @@ input {
   }
 
   .btn {
-    margin-right: 1rem;
+    margin-left: 0.5rem;
+    margin-right: 0;
     padding: 0.4rem 0.5rem;
+
     background-color: rgb(97, 148, 214);
     border: none;
     border-radius: 30px;
