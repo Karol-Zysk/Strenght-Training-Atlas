@@ -12,7 +12,7 @@ const BigCard = ({ check }) => {
       <div style={{ display: "grid" }}>
         <img src={check.gifUrl} alt="img" className={style.big_card_img}></img>
         <div className={style.big_card_description_div}>
-          <p className={style.big_card_target}>Target Muscle: {check.target}</p>
+          <p className={style.big_card_target}>Target Muscle:  <span style={{textTransform: "uppercase"}}>{check.target}</span></p>
           <p className={style.big_card_description}>
             Description:<br></br>
             {randomExerciseDescription}

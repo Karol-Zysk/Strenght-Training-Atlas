@@ -10,7 +10,7 @@ const SmallCards = ({ bodyPart, card_check }) => {
   };
 
   return (
-    <div className={style.small_card}>
+    <div className={style.small_card} onClick={scrollDownHandler}>
       <div className={style.img_container}>
         <p className={style.small_card_title}> {bodyPart.name}</p>
         <img
@@ -20,7 +20,7 @@ const SmallCards = ({ bodyPart, card_check }) => {
         ></img>
 
         <div className={style.overlay}>
-          <button className={style.btn} onClick={scrollDownHandler}>
+          <button className={style.btn} onClick={card_check() } >
             View more
           </button>
         </div>

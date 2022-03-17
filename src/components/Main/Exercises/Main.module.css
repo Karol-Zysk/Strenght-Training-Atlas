@@ -154,7 +154,6 @@
 }
 
 .img_container {
-  height: -webkit-fill-available;
   overflow: hidden;
   width: 100%;
   position: relative;
@@ -263,15 +262,19 @@
   }
 
   .small_card {
-    background-color: rgba(255, 255, 255, 0.363);
+    background-color: rgb(255, 255, 255);
     flex-direction: column;
     border: 2px black solid;
     border-radius: 10px;
+    filter: brightness(0.9);
   }
 
   .small_card:hover {
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgb(255, 255, 255);
     transition: ease 200ms;
+    filter: brightness(1);
+    cursor: pointer;
+
   }
 
   .small_card_img {
@@ -279,21 +282,20 @@
     padding-top: 2rem;
     width: 100%;
     height: 100%;
+    
   }
 
   .small_card_title {
-    background-image: linear-gradient(
-      to bottom,
-      rgba(114, 114, 114, 0.582),
-      transparent
-    );
-    color: white;
-    padding: 0.2rem;
-    font-size: 0.7rem;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    padding: 0rem;
+    margin-top: 1vw;
+    font-size: 2.2vw;
     font-weight: 400;
     position: absolute;
     width: 100%;
     left: 0%;
+    height: 30%;
   }
   .big_card {
     color: white;
@@ -339,17 +341,7 @@
   }
 
   .overlay {
-    position: absolute;
-    width: 100%;
-    left: 0px;
-    bottom: -15rem;
-    background-image: linear-gradient(
-      to bottom,
-      transparent,
-      rgba(8, 8, 8, 0.582)
-    );
-    padding: 5px 5px 5px;
-    transition: 0.6s ease-in-out 200ms;
+    display: none;
   }
 
   .btn {
@@ -367,7 +359,6 @@
   }
 
   .img_container {
-    height: -webkit-fill-available;
     overflow: hidden;
     width: 100%;
     position: relative;
@@ -422,11 +413,11 @@
 
   @keyframes big_card_show {
     from {
-      transform: translateX(200%);
+      transform: translateY(200%);
       width: 0%;
     }
     to {
-      transform: translateX(0%);
+      transform: translateY(0%);
 
       width: 95%;
     }
