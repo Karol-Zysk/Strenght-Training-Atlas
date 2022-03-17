@@ -115,11 +115,11 @@ nav {
 
 .loginPanel {
   display: flex;
-  width: 40%;
+  width: 60%;
   align-self: flex-end;
   justify-content: space-between;
   justify-items: center;
-  padding: 0.5rem 1rem 0rem 1rem;
+  padding: 1.5rem 1rem 1rem 1rem;
 }
 
 .loginPanel_btn_div {
@@ -131,14 +131,14 @@ nav {
   margin-right: 1rem;
   background-color: transparent;
   color: rgba(255, 255, 255, 0.918);
-  font-size: 1rem;
+  font-size: 1.2rem;
   border: none;
   font-weight: 500;
   cursor: pointer;
 }
 
 .loginPanel_paragraph {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
 }
 
 @media only screen and (max-width: 600px) {
@@ -236,6 +236,7 @@ nav {
     justify-items: center;
     align-items: center;
     margin-top: 5px;
+    padding-bottom: 0rem;
   }
 
   .loginPanel_btn {
