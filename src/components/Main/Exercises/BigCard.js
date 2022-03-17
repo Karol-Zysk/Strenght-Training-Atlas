@@ -10,7 +10,7 @@ const BigCard = ({ check }) => {
     <div className={style.big_card}>
       <p className={style.big_card_span}>{check.name}</p>
       <div style={{ display: "grid" }}>
-        <img src={check.imgpng} alt="img" className={style.big_card_img}></img>
+        <img src={check.gifUrl} alt="img" className={style.big_card_img}></img>
         <div className={style.big_card_description_div}>
           <p className={style.big_card_target}>Target Muscle: {check.target}</p>
           <p className={style.big_card_description}>

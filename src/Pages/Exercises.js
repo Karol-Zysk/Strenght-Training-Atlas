@@ -14,7 +14,7 @@ const MainNavbar = () => {
       <div className={style.main_navbar}>
         <ul className={style.nav_links}>
           <Link to="/exercises/waist" className={style.nav_links_li}>
-            Waist
+            Abs
           </Link>
           <Link to="/exercises/back" className={style.nav_links_li}>
             Back

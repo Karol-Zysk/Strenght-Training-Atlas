@@ -2,26 +2,26 @@ import React from "react";
 import style from "../../Main.module.css";
 import BigCard from "../../BigCard";
 import SmallCards from "../../SmallCards";
-import data_arms from "../../data/data_arms";
+import { useQuery } from "react-query";
 
 const Arms = (props) => {
-  /* const fetchBodyParts = async () => {
-    const response = await fetch("%PUBLIC_URL%/data_chest.json", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
+  const fetchBodyParts = async () => {
+    const response = await fetch("https://exercisedb.p.rapidapi.com/exercises/target/biceps", {
+      "method": "GET",
+      "headers": {
+        "x-rapidapi-host": "exercisedb.p.rapidapi.com",
+        "x-rapidapi-key": "8d9795689emshed7c3647a112cd4p157e57jsne7ce521c319e"
       },
     });
     return response.json();
-  }; */
-  const data = data_arms;
+  }; 
+  
  
   const [check, setTitleCheck] = React.useState({});
   const [showBigCard, setShowBigCard] = React.useState(false);
 
-  /*const { data, status } = useQuery("bodyParts", fetchBodyParts);
-  console.log(check, status);*/
+  const { data, status } = useQuery("bodyParts", fetchBodyParts);
+  console.log(data, status);
   return (
     <>
       <div className={style.container}>

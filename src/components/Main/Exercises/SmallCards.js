@@ -14,7 +14,7 @@ const SmallCards = ({ bodyPart, card_check }) => {
       <div className={style.img_container}>
         <p className={style.small_card_title}> {bodyPart.name}</p>
         <img
-          src={bodyPart.imgpng}
+          src={bodyPart.gifUrl}
           alt="img"
           className={style.small_card_img}
         ></img>
