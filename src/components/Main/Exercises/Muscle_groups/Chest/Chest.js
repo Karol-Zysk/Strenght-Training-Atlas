@@ -6,9 +6,7 @@ import { useEffect, useState } from "react";
 import axios from "../../../../../axios";
 
 const Chest = (props) => {
-
   const [data, setData] = useState(null);
-
 
   useEffect(() => {
     const bodyParts = {
@@ -19,22 +17,17 @@ const Chest = (props) => {
     axios
       .request(bodyParts)
       .then((response) => {
-        console.log(response.data);
         setData(response.data);
       })
-      .catch((error) => {
-        console.log(error);
-      });
+      .catch((error) => {});
   }, []);
-  
- 
+
   const [check, setTitleCheck] = React.useState({});
   const [showBigCard, setShowBigCard] = React.useState(false);
 
   return (
     <>
       <div className={style.container}>
-        
         <div className={style.card_container}>
           {data?.slice(0, 20)?.map((bodyPart) => {
             const target_object_to_variable = () => {
@@ -54,7 +47,6 @@ const Chest = (props) => {
       </div>
     </>
   );
-}
-
+};
 
 export default Chest;

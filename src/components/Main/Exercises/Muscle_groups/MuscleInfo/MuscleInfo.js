@@ -2,7 +2,7 @@ import React from "react";
 import style from "../../Main.module.css";
 import photo from "./muscle.png";
 import text from "../../text";
-import logo from "../../../files/logo.PNG"
+import logo from "../../../../files/logo.PNG"
 
 const MuscleInfo = (props) => {
   return (
