@@ -2,26 +2,35 @@ import React from "react";
 import style from "../../Main.module.css";
 import BigCard from "../../BigCard";
 import SmallCards from "../../SmallCards";
-import { useQuery } from "react-query";
+import { useEffect, useState } from "react";
+import axios from "../../../../../axios";
 
-export default function Chest() {
-  const fetchBodyParts = async () => {
-    const response = await fetch("https://exercisedb.p.rapidapi.com/exercises/target/pectorals", {
-      "method": "GET",
-      "headers": {
-        "x-rapidapi-host": "exercisedb.p.rapidapi.com",
-        "x-rapidapi-key": "8d9795689emshed7c3647a112cd4p157e57jsne7ce521c319e"
-      },
-    });
-    return response.json();
-  }; 
+const Chest = (props) => {
+
+  const [data, setData] = useState(null);
+
+
+  useEffect(() => {
+    const bodyParts = {
+      method: "GET",
+      url: "/exercise/pectorals",
+    };
+
+    axios
+      .request(bodyParts)
+      .then((response) => {
+        console.log(response.data);
+        setData(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
   
  
   const [check, setTitleCheck] = React.useState({});
   const [showBigCard, setShowBigCard] = React.useState(false);
 
-  const { data, status } = useQuery("bodyParts", fetchBodyParts);
-  console.log(data, status);
   return (
     <>
       <div className={style.container}>
@@ -46,3 +55,6 @@ export default function Chest() {
     </>
   );
 }
+
+
+export default Chest;
