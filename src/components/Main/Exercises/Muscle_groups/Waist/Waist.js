@@ -19,11 +19,9 @@ const Waist = (props) => {
       .then((response) => {
         setData(response.data);
       })
-      .catch((error) => {
-      });
+      .catch((error) => {});
   }, []);
-
-  const [check, setTitleCheck] = React.useState({});
+  const [target, setTarget] = React.useState({});
   const [showBigCard, setShowBigCard] = React.useState(false);
 
   return (
@@ -31,15 +29,22 @@ const Waist = (props) => {
       <div className={style.container}>
         <div className={style.card_container}>
           {data?.slice(0, 20)?.map((bodyPart) => {
-            const card_check = () => {
-              setTitleCheck((...value) => (value = bodyPart));
-              setShowBigCard((prev) => (prev = true));
+            const check_target_card = () => {
+              setTarget((...value) => (value = bodyPart));
             };
-            return <SmallCards bodyPart={bodyPart} card_check={card_check} />;
+            return (
+              <SmallCards
+                key={bodyPart.id}
+                bodyPart={bodyPart}
+                check_target_card={check_target_card}
+                setShowBigCard={setShowBigCard}
+                showBigCard={showBigCard}
+              />
+            );
           })}
         </div>
 
-        {showBigCard && <BigCard check={check} />}
+        {showBigCard && <BigCard target={target} />}
       </div>
     </>
   );

@@ -25,6 +25,9 @@ const MainNavbar = () => {
           <Link to="/exercises/chest" className={style.nav_links_li}>
             Chest
           </Link>
+          <Link to="/exercises/legs" className={style.nav_links_li}>
+            Legs
+          </Link>
         </ul>
       </div>
       <Routes>

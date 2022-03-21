@@ -21,8 +21,7 @@ const Chest = (props) => {
       })
       .catch((error) => {});
   }, []);
-
-  const [check, setTitleCheck] = React.useState({});
+  const [target, setTarget] = React.useState({});
   const [showBigCard, setShowBigCard] = React.useState(false);
 
   return (
@@ -30,20 +29,22 @@ const Chest = (props) => {
       <div className={style.container}>
         <div className={style.card_container}>
           {data?.slice(0, 20)?.map((bodyPart) => {
-            const target_object_to_variable = () => {
-              setTitleCheck((...value) => (value = bodyPart));
-              setShowBigCard((prev) => (prev = true));
+            const check_target_card = () => {
+              setTarget((...value) => (value = bodyPart));
             };
             return (
               <SmallCards
+                key={bodyPart.id}
                 bodyPart={bodyPart}
-                card_check={target_object_to_variable}
+                check_target_card={check_target_card}
+                setShowBigCard={setShowBigCard}
+                showBigCard={showBigCard}
               />
             );
           })}
         </div>
 
-        {showBigCard && <BigCard check={check} />}
+        {showBigCard && <BigCard target={target} />}
       </div>
     </>
   );

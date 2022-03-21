@@ -1,9 +1,10 @@
 import React from "react";
 import style from "./Main.module.css";
 
-const SmallCards = ({ bodyPart, card_check }) => {
+const SmallCards = ({ bodyPart, check_target_card, setShowBigCard, showBigCard }) => {
   const scrollDownHandler = () => {
-    card_check();
+    check_target_card();
+    setShowBigCard(true)
     if (window.innerWidth < 720) {
       window.scrollTo({ top: 1000, behavior: "smooth" });
     }
@@ -20,7 +21,7 @@ const SmallCards = ({ bodyPart, card_check }) => {
         ></img>
 
         <div className={style.overlay}>
-          <button className={style.btn} onClick={card_check() } >
+          <button className={style.btn} >
             View more
           </button>
         </div>
