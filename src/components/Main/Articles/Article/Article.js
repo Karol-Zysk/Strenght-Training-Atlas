@@ -13,11 +13,7 @@ const Article = ({
   onEdit,
   date,
 }) => {
-  const [loginName] = useContext(LoginContext);
-
-  
-  
-
+  const { loginName } = useContext(LoginContext);
 
   return (
     <div className={style.article}>
@@ -43,7 +39,7 @@ const Article = ({
           </div>
         </div>
       </div>
-      {name === loginName  ? (
+      {name === loginName ? (
         <>
           <div className={style.flexDiv}>
             <button className={style.btn} onClick={() => onDelete(_id)}>

@@ -5,7 +5,7 @@ import { LoginContext } from "../../../../context/loginContext";
 import style from "../../Articles/Articles.module.css";
 
 const NewArticle = ({ onAdd, avatar, title, _id, body }) => {
-  let [loginName] = useContext(LoginContext);
+  let { loginName } = useContext(LoginContext);
   let navigate = useNavigate();
   const [showModal, setShowModal] = React.useState(false);
   const [newTitle, setTitle] = React.useState("");
@@ -47,12 +47,17 @@ const NewArticle = ({ onAdd, avatar, title, _id, body }) => {
       <input type="text" value={title} onChange={setTitleHandler} />
 
       <label>Article Body:</label>
-      <textarea className={style.textarea_newArticle} type="text" value={body} onChange={setBodyHandler} />
+      <textarea
+        className={style.textarea_newArticle}
+        type="text"
+        value={body}
+        onChange={setBodyHandler}
+      />
       <label>Link to avatar</label>
       <input type="text" value={avatar} onChange={setAvatarHandler} />
 
       <button className={style.btn} onClick={() => addArticle()}>
-        Add 
+        Add
       </button>
     </div>
   ) : !loginName ? (

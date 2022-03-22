@@ -15,7 +15,7 @@ const useFetch = (url) => {
     if (data.status === "ok") {
       setLoginName(data.name);
     } else {
-      // console.log(data.error);
+      console.log("Error");
     }
   }
 
@@ -31,9 +31,10 @@ const useFetch = (url) => {
         getName();
       }
     }
-  }, [getName]);
-
+  }, [navigate]);
+  console.log(loginName)
   return { loginName, setLoginName };
+
 };
 
 export default useFetch;

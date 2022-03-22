@@ -6,12 +6,8 @@ import useFetch from "./useFetch";
 export const LoginContext = createContext();
 
 export const LoginProvider = ({ children }) => {
-  const { loginName, setLoginName  } = useFetch();
-  
-
+  const {loginName, setLoginName} = useFetch();
   return (
-    <LoginContext.Provider value={[loginName, setLoginName]}>
-      {children}
-    </LoginContext.Provider>
+    <LoginContext.Provider value={{ loginName, setLoginName }}>{children}</LoginContext.Provider>
   );
 };
