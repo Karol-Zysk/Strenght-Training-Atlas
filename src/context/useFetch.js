@@ -32,7 +32,6 @@ const useFetch = (url) => {
       }
     }
   }, [navigate]);
-  console.log(loginName)
   return { loginName, setLoginName };
 
 };

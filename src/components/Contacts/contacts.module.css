@@ -181,7 +181,7 @@ p {
     position: absolute;
     left: 0;
 
-    top: -100%;
+    top: -200%;
     transition: 0.7s ease-in-out;
   }
 
