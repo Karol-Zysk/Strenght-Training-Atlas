@@ -179,9 +179,9 @@ p {
     font-size: 1.3rem;
     color: rgb(255, 255, 255);
     position: absolute;
-    left: 0;
+    left: -200%;
 
-    top: -200%;
+    top: 0;
     transition: 0.7s ease-in-out;
   }
 
