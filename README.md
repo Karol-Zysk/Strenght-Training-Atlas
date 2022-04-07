@@ -7,7 +7,7 @@ Strenght Bible
 <img src="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white" alt="React"/>,
 jsonwebtoken, EmailJS, UseContext
 
-live: https://romantic-ardinghelli-a492fd.netlify.app/login
+live: https://romantic-ardinghelli-a492fd.netlify.app
 
 
 A page with a dose of knowledge about strength training
